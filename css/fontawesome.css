@@ -81,15 +81,15 @@
   font-family: var(--font-icon);
   content: "\f00d";
 }
-.post-meta .icon-calendar:before {
+.icon-calendar:before {
   font-family: var(--font-icon);
   content: "\f073";
 }
-.post-meta .icon-pencil:before {
+.icon-pencil:before {
   font-family: var(--font-icon);
   content: "\f5ad";
 }
-.post-meta .icon-clock:before {
+.icon-clock:before {
   font-family: var(--font-icon);
   content: "\f252";
 }
@@ -112,6 +112,21 @@
 .ais-pagination--item__next a:before {
   font-family: var(--font-icon);
   content: "\f105";
+}
+.icon-facebook:before {
+  content: "\f09a";
+}
+.icon-twitter:before {
+  content: "\e61b";
+}
+.icon-linkedin:before {
+  content: "\f08c";
+}
+.icon-weibo:before {
+  content: "\f18a";
+}
+.icon-reddit:before {
+  content: "\f1a1";
 }
 .sidebar-btn-wrapper .sidebar-toc-btn:before {
   font-family: var(--font-icon);
@@ -140,6 +155,18 @@
 .icon-taichi:before {
   font-family: var(--font-icon);
   content: "\f6ad";
+}
+.icon-weixin:before {
+  font-family: var(--font-icon);
+  content: "\f1d7";
+}
+.icon-qq:before {
+  font-family: var(--font-icon);
+  content: "\f1d6";
+}
+.icon-image:before {
+  font-family: var(--font-icon);
+  content: "\f03e";
 }
 .icon {
   font-family: var(--font-icon);

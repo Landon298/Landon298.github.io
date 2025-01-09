@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont";
-  src: url("//at.alicdn.com/t/c/font_4552607_tq6stt6tcg.woff2") format('woff2');
+  src: url("//at.alicdn.com/t/c/font_4552607_bq08450reo.woff2") format('woff2');
   font-display: swap;
 }
 .tag-wrap .archives-tag-list-link:before {
@@ -83,15 +83,15 @@
   font-family: "iconfont";
   content: "\e637";
 }
-.post-meta .icon-calendar:before {
+.icon-calendar:before {
   font-family: "iconfont";
   content: "\e605";
 }
-.post-meta .icon-pencil:before {
+.icon-pencil:before {
   font-family: "iconfont";
   content: "\e61b";
 }
-.post-meta .icon-clock:before {
+.icon-clock:before {
   font-family: "iconfont";
   content: "\e613";
 }
@@ -114,6 +114,21 @@
 .ais-pagination--item__next a:before {
   font-family: "iconfont";
   content: "\e630";
+}
+.icon-facebook:before {
+  content: "\e60e";
+}
+.icon-twitter:before {
+  content: "\e62a";
+}
+.icon-linkedin:before {
+  content: "\e614";
+}
+.icon-weibo:before {
+  content: "\e62c";
+}
+.icon-reddit:before {
+  content: "\e61c";
 }
 .sidebar-btn-wrapper .sidebar-toc-btn:before {
   font-family: "iconfont";
@@ -142,6 +157,18 @@
 .icon-taichi:before {
   font-family: "iconfont";
   content: "\e62b";
+}
+.icon-weixin:before {
+  font-family: "iconfont";
+  content: "\e640";
+}
+.icon-qq:before {
+  font-family: "iconfont";
+  content: "\e63e";
+}
+.icon-image:before {
+  font-family: "iconfont";
+  content: "\e63f";
 }
 .icon {
   font-family: "iconfont";

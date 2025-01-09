@@ -238,7 +238,7 @@ body [data-aos='zoom-in'] {
 }
 @font-face {
   font-family: "iconfont";
-  src: url("//at.alicdn.com/t/c/font_4552607_tq6stt6tcg.woff2") format('woff2');
+  src: url("//at.alicdn.com/t/c/font_4552607_bq08450reo.woff2") format('woff2');
   font-display: swap;
 }
 .tag-wrap .archives-tag-list-link:before {
@@ -321,15 +321,15 @@ body [data-aos='zoom-in'] {
   font-family: "iconfont";
   content: "\e637";
 }
-.post-meta .icon-calendar:before {
+.icon-calendar:before {
   font-family: "iconfont";
   content: "\e605";
 }
-.post-meta .icon-pencil:before {
+.icon-pencil:before {
   font-family: "iconfont";
   content: "\e61b";
 }
-.post-meta .icon-clock:before {
+.icon-clock:before {
   font-family: "iconfont";
   content: "\e613";
 }
@@ -352,6 +352,21 @@ body [data-aos='zoom-in'] {
 .ais-pagination--item__next a:before {
   font-family: "iconfont";
   content: "\e630";
+}
+.icon-facebook:before {
+  content: "\e60e";
+}
+.icon-twitter:before {
+  content: "\e62a";
+}
+.icon-linkedin:before {
+  content: "\e614";
+}
+.icon-weibo:before {
+  content: "\e62c";
+}
+.icon-reddit:before {
+  content: "\e61c";
 }
 .sidebar-btn-wrapper .sidebar-toc-btn:before {
   font-family: "iconfont";
@@ -380,6 +395,18 @@ body [data-aos='zoom-in'] {
 .icon-taichi:before {
   font-family: "iconfont";
   content: "\e62b";
+}
+.icon-weixin:before {
+  font-family: "iconfont";
+  content: "\e640";
+}
+.icon-qq:before {
+  font-family: "iconfont";
+  content: "\e63e";
+}
+.icon-image:before {
+  font-family: "iconfont";
+  content: "\e63f";
 }
 .icon {
   font-family: "iconfont";
@@ -548,6 +575,7 @@ a {
   background: var(--color-background);
 }
 #main {
+  flex: 1;
   padding: 0 10px;
   max-width: 100%;
   box-sizing: border-box;
@@ -567,11 +595,15 @@ a {
   overflow: visible;
 }
 @media screen and (min-width: 960px) {
-  #main {
+  .sidebar-left #main,
+  .sidebar-right #main {
     padding: 0;
     width: 73%;
     margin: 0 1%;
   }
+}
+#content.sidebar-right {
+  flex-direction: row-reverse;
 }
 #mask {
   z-index: 1000;
@@ -826,7 +858,7 @@ a {
 .article-inner {
   background: var(--color-wrap);
   border-radius: 10px;
-  overflow: hidden;
+  display: flow-root;
   transition: 0.3s;
 }
 .article-meta {
@@ -928,6 +960,7 @@ a {
 .article-entry a {
   color: var(--color-link);
   text-decoration: none;
+  word-break: break-word;
 }
 .article-entry a:hover {
   text-decoration: underline;
@@ -1056,6 +1089,11 @@ a {
 }
 .article-footer:after {
   clear: both;
+}
+@media screen and (max-width: 767px) {
+  .article-footer {
+    margin: 0 20px 20px;
+  }
 }
 .article-footer:hover:before {
   opacity: 0.5;
@@ -1735,6 +1773,7 @@ a {
   font-family: 'Menlo','Monaco','Consolas','monospace';
   font-size: 95%;
   transition: 0.3s;
+  word-break: break-word;
 }
 .article-entry code,
 .article-entry kbd {
@@ -2064,7 +2103,7 @@ pre .javascript .function {
 .post-link-card {
   display: flex;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   overflow: hidden;
   position: relative;
   transition: 0.3s;
@@ -2097,7 +2136,7 @@ pre .javascript .function {
 .post-link-card-cover-wrap img {
   width: 100%;
   height: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
   object-fit: cover;
 }
 .post-link-card-cover-wrap.auto {
@@ -2105,7 +2144,7 @@ pre .javascript .function {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 5px;
+  border-radius: 10px;
   padding-right: 0;
   margin-right: 20px;
 }
@@ -2202,13 +2241,22 @@ pre .javascript .function {
     background: var(--top-icon) no-repeat center/100%;
   }
 }
+#sidebar {
+  display: none;
+}
+.sidebar-left #sidebar,
+.sidebar-right #sidebar {
+  display: block;
+}
 @media screen and (max-width: 959px) {
-  #sidebar {
+  .sidebar-left #sidebar,
+  .sidebar-right #sidebar {
     display: none;
   }
 }
 @media screen and (min-width: 960px) {
-  #sidebar {
+  .sidebar-left #sidebar,
+  .sidebar-right #sidebar {
     width: 23%;
     margin: 0 1%;
     height: inherit;
@@ -2286,6 +2334,7 @@ pre .javascript .function {
 }
 .sidebar-author .sidebar-description {
   color: var(--grey-7);
+  margin: 0 20px;
 }
 .sidebar-state .sidebar-state-article,
 .sidebar-state .sidebar-state-category,
@@ -2571,6 +2620,129 @@ pre .javascript .function {
 }
 .sidebar-toc-sidebar {
   width: 100%;
+}
+.share-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.share-icon {
+  margin: 8px;
+  color: var(--color-link) !important;
+  position: relative;
+  transition: all 0.2s;
+}
+.share-icon:before {
+  display: block;
+  opacity: 0.8;
+  font-size: 24px;
+  transition: all 0.2s;
+  will-change: transform;
+}
+.share-icon:hover:before {
+  opacity: 1;
+  transform: scale(1.2);
+}
+#share-weixin {
+  display: none;
+  position: absolute;
+  top: -440px;
+  left: -138px;
+  background: #fff;
+  user-select: none;
+  width: 300px;
+  height: 420px;
+  overflow: hidden;
+  border-radius: 10px;
+  z-index: 50;
+  box-shadow: 0 0 10px 5px var(--color-hover-shadow);
+}
+#share-weixin img {
+  filter: none !important;
+}
+#share-weixin.active {
+  display: block;
+}
+.share-weixin-dom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  height: 100%;
+}
+.share-weixin-canvas {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.share-weixin-canvas img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+#share-weixin-banner {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+#share-weixin-title {
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--color-link);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#share-weixin-desc {
+  margin: 0 16px 10px;
+  font-size: 14px;
+  color: var(--color-default);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  overflow: hidden;
+  word-break: break-word;
+  line-height: 2;
+  position: relative;
+}
+#share-weixin-desc:after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(rgba(255,255,255,0), #fff);
+  height: 30px;
+  width: 100%;
+  left: 0;
+  bottom: 5px;
+}
+#share-weixin-qr {
+  width: 80px;
+  height: 80px;
+}
+#share-weixin-author {
+  color: var(--color-default);
+  font-size: 14px;
+  margin: 12px 0;
+}
+#share-weixin-theme {
+  color: var(--color-default);
+  font-size: 12px;
+}
+.share-weixin-qrcode {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 16px 16px;
+}
+.share-weixin-info {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
 }
 .left {
   float: left;
