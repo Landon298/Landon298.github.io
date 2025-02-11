@@ -1,0 +1,1015 @@
+
+  <!DOCTYPE html>
+  <html lang="zh-CN"  >
+  <head>
+  <meta charset="utf-8">
+  
+
+  
+
+  
+
+  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_bq08450reo';window.REIMU_CONFIG.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ","copyright":{"enable":false,"count":50,"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！"}};window.REIMU_CONFIG.code_block = {"expand":true};</script>
+  
+  <title>
+    练习赛0x01题解(纯文本版) |
+    
+    Landon298 Blog
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic&display=swap" media="print" onload="this.media&#x3D;&#39;all&#39;">
+  
+    <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_bq08450reo.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+  
+  
+    <meta name="description" content="前言下面是本萌新第一次完整的写下全部的ctf题，之前练的一直都是web方向的，但是通过在这次测试使我学到了许多misc和crypto的知识。如有错误，欢迎大家来与我交流。 题目一题目信息 题目名称： miao~ 类别： Misc    题目描述：  猫猫真的很可爱捏~ 附件下载： miao~附件.zip   第1题： 解题思路、步骤：打开附件发现里面有一张以jpg为后缀的照片，打开后发现没有有用的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="练习赛0x01题解(纯文本版)">
+<meta property="og:url" content="https://landon298.github.io/2024/12/14/%E7%BB%83%E4%B9%A0%E8%B5%9B0x01%E9%A2%98%E8%A7%A3/">
+<meta property="og:site_name" content="Landon298 Blog">
+<meta property="og:description" content="前言下面是本萌新第一次完整的写下全部的ctf题，之前练的一直都是web方向的，但是通过在这次测试使我学到了许多misc和crypto的知识。如有错误，欢迎大家来与我交流。 题目一题目信息 题目名称： miao~ 类别： Misc    题目描述：  猫猫真的很可爱捏~ 附件下载： miao~附件.zip   第1题： 解题思路、步骤：打开附件发现里面有一张以jpg为后缀的照片，打开后发现没有有用的">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-12-14T02:56:24.000Z">
+<meta property="article:modified_time" content="2025-01-03T08:30:00.367Z">
+<meta property="article:author" content="Landon298">
+<meta property="article:tag" content="AI,CTF,编程,区块链">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="alternate" href="/atom.xml" title="Landon298 Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preload" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  
+  
+  
+    
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
+
+  
+  
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/@reimujs/aos@0.1.0/dist/aos.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css">
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+  <body>
+    
+  <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi">
+        
+          <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+           M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg>
+        
+      </div>
+      <div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    var endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script>
+
+<div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon rotate">
+            &#xe62b;
+          </div>
+          <a class="main-nav-link" href="/">首页</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon rotate">
+            &#xe62b;
+          </div>
+          <a class="main-nav-link" href="/archives">归档</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon rotate">
+            &#xe62b;
+          </div>
+          <a class="main-nav-link" href="/about">关于</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon rotate">
+            &#xe62b;
+          </div>
+          <a class="main-nav-link" href="/friend">友链</a>
+        </span>
+      
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅" target="_blank"></a>
+    
+    
+    
+  </nav>
+</div>
+<header id="header">
+  
+    <picture></picture>
+    <img fetchpriority="high" src="https://i.111666.best/image/iI6QBaOSDmi7ywvQ1pf2z0.jpg" alt="练习赛0x01题解(纯文本版)">
+  
+  <div id="header-outer">
+    <div id="header-title">
+      
+        
+        
+          <a href="/" id="logo">
+            <h1 data-aos="slide-up">练习赛0x01题解(纯文本版)</h1>
+          </a>
+        
+      
+      
+        
+        <h2 id="subtitle-wrap" data-aos="slide-down">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content"  class="sidebar-right" >
+          <aside id="sidebar">
+  
+    <div id="aplayer" theme="var(--color-link)" data-aos="fade-up"></div>
+  
+  
+  <div class="sidebar-wrapper wrap-sticky">
+    <div class="sidebar-wrap" data-aos="fade-up">
+      
+        <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%80"><span class="toc-number">1.1.</span> <span class="toc-text">题目一</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF"><span class="toc-number">2.</span> <span class="toc-text">题目信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">2.1.</span> <span class="toc-text">解题思路、步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flag"><span class="toc-number">2.1.1.</span> <span class="toc-text">Flag:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BA%8C"><span class="toc-number">3.</span> <span class="toc-text">题目二</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-1"><span class="toc-number">4.</span> <span class="toc-text">题目信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-1"><span class="toc-number">4.1.</span> <span class="toc-text">解题思路、步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flag-1"><span class="toc-number">4.1.1.</span> <span class="toc-text">Flag:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%89"><span class="toc-number">5.</span> <span class="toc-text">题目三</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-2"><span class="toc-number">6.</span> <span class="toc-text">题目信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-2"><span class="toc-number">6.1.</span> <span class="toc-text">解题思路、步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flag-2"><span class="toc-number">6.1.1.</span> <span class="toc-text">Flag:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%9B%9B"><span class="toc-number">7.</span> <span class="toc-text">题目四</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-3"><span class="toc-number">8.</span> <span class="toc-text">题目信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-3"><span class="toc-number">8.1.</span> <span class="toc-text">解题思路、步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flag-3"><span class="toc-number">8.1.1.</span> <span class="toc-text">Flag:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BA%94"><span class="toc-number">9.</span> <span class="toc-text">题目五</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-4"><span class="toc-number">10.</span> <span class="toc-text">题目信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-4"><span class="toc-number">10.1.</span> <span class="toc-text">解题思路、步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flag-4"><span class="toc-number">10.1.1.</span> <span class="toc-text">Flag:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%85%AD"><span class="toc-number">11.</span> <span class="toc-text">题目六</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-5"><span class="toc-number">12.</span> <span class="toc-text">题目信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-5"><span class="toc-number">12.1.</span> <span class="toc-text">解题思路、步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flag-5"><span class="toc-number">12.1.1.</span> <span class="toc-text">Flag:</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%83"><span class="toc-number"></span> <span class="toc-text">题目七</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-6"><span class="toc-number">1.</span> <span class="toc-text">题目信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-6"><span class="toc-number">1.1.</span> <span class="toc-text">解题思路、步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flag-6"><span class="toc-number">1.1.1.</span> <span class="toc-text">Flag:</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%85%AB"><span class="toc-number"></span> <span class="toc-text">题目八</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-7"><span class="toc-number">1.</span> <span class="toc-text">题目信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-7"><span class="toc-number">1.1.</span> <span class="toc-text">解题思路、步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flag-7"><span class="toc-number">1.1.1.</span> <span class="toc-text">Flag:</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B9%9D"><span class="toc-number"></span> <span class="toc-text">题目九</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-8"><span class="toc-number">1.</span> <span class="toc-text">题目信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-8"><span class="toc-number">1.1.</span> <span class="toc-text">解题思路、步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flag-8"><span class="toc-number">1.1.1.</span> <span class="toc-text">Flag:</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%8D%81"><span class="toc-number"></span> <span class="toc-text">题目十</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-9"><span class="toc-number">1.</span> <span class="toc-text">题目信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-9"><span class="toc-number">1.1.</span> <span class="toc-text">解题思路、步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flag-9"><span class="toc-number">1.1.1.</span> <span class="toc-text">Flag:</span></a></li></ol></li></ol></li></ol>
+      
+  </div>
+</div>
+</div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="Landon298" class="lazyload">
+  <div class="sidebar-author-name">Landon298</div>
+  <div class="sidebar-description">人性的背后都是白云苍狗，愿你我都要做生活的高手</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">10</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">首页</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">归档</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">关于</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">友链</div>
+      </div>
+    
+  
+</div>
+</div>
+      
+      
+        <div class="sidebar-btn-wrapper" style="position:static">
+          <div class="sidebar-toc-btn current"></div>
+          <div class="sidebar-common-btn"></div>
+        </div>
+      
+    </div>
+  </div>
+
+  <div class="sidebar-widget">
+  
+  </div>
+</aside>
+
+          <section id="main"><article id="post-练习赛0x01题解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner" data-aos="fade-up">
+    <div class="article-meta">
+      <div class="article-date">
+  <a href="/2024/12/14/%E7%BB%83%E4%B9%A0%E8%B5%9B0x01%E9%A2%98%E8%A7%A3/" class="article-date-link" data-aos="zoom-in">
+    <time datetime="2024-12-14T02:56:24.000Z" itemprop="datePublished">2024-12-14</time>
+    <time style="display: none;" id="post-update-time">2025-01-03</time>
+  </a>
+</div>
+
+      
+
+    </div>
+    <div class="hr-line"></div>
+    
+
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>下面是本萌新第一次完整的写下全部的ctf题，之前练的一直都是web方向的，但是通过在这次测试使我学到了许多misc和crypto的知识。如有错误，欢迎大家来与我交流。</p>
+<h3 id="题目一"><a href="#题目一" class="headerlink" title="题目一"></a>题目一</h3><h2 id="题目信息"><a href="#题目信息" class="headerlink" title="题目信息"></a>题目信息</h2><ul>
+<li><strong>题目名称：</strong> miao~</li>
+<li><strong>类别：</strong> Misc   </li>
+<li><strong>题目描述：</strong>  猫猫真的很可爱捏~</li>
+<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="http://10.115.1.252:6543/assets/0c85b2e70ac89e6588b72c906bb63873e5f04b536d8cc1ad1da21a9469a5d9c3/miao~%E9%99%84%E4%BB%B6.zip">miao~附件.zip</a></li>
+</ul>
+<hr>
+<p><strong>第1题：</strong></p>
+<h3 id="解题思路、步骤："><a href="#解题思路、步骤：" class="headerlink" title="解题思路、步骤："></a>解题思路、步骤：</h3><p>打开附件发现里面有一张以jpg为后缀的照片，打开后发现没有有用的信息，于是用到了foremost软件，将这张照片丢到foremost文件夹里面，在生成的output文件夹里面发现了一段录音，打开后是猫叫，于是打开在线音频分析工具，显示波形图得到了一个类似密码CatCTF,然后想到了DeepSound能分析音频，于是打开后把那个音频丢了进去，果然要求输入密码，输入CatCTF后发现出来了一个flag.txt,于是打开DeepSound文件夹里的flag.txt,发现里面是猫叫的汉字，正好之前看了一个csdn上的：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Aluxian_/article/details/141812967">https://blog.csdn.net/Aluxian_/article/details/141812967</a> ，正好里面有一个兽语解码，网址为：<a target="_blank" rel="noopener" href="http://hi.pcmoe.net/roar.html">http://hi.pcmoe.net/roar.html</a> .把这个输进去后，就得到了flag.</p>
+<h4 id="Flag"><a href="#Flag" class="headerlink" title="Flag:"></a>Flag:</h4><p>CatCTF{d0_y0u_Hate_c4t_ba3k1ng_?_M1ao~}</p>
+<h2 id="题目二"><a href="#题目二" class="headerlink" title="题目二"></a>题目二</h2><h2 id="题目信息-1"><a href="#题目信息-1" class="headerlink" title="题目信息"></a>题目信息</h2><ul>
+<li><strong>题目名称：</strong> misc1</li>
+<li><strong>类别：</strong> Misc   </li>
+<li><strong>题目描述：</strong>  出题人没有给题目描述哦</li>
+<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="http://10.115.1.252:6543/assets/d8b1158dc65313db5a1dfbd6082a70d7eab383d4364a1c0399a0b7d2913e50e6/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E6%89%93%E4%B8%8D%E5%BC%80%E5%91%A2.ppt">为什么会打不开呢.ppt</a></li>
+</ul>
+<hr>
+<p><strong>第2题；</strong></p>
+<h3 id="解题思路、步骤：-1"><a href="#解题思路、步骤：-1" class="headerlink" title="解题思路、步骤："></a>解题思路、步骤：</h3><p>首先下载附件，打开后只有一句话，然后尝试用010 Editor分析，分析后搜索发现一个假的flag:flag{Not_So_Easy_Stupid_Boy},于是再查看16进制前面的英文，发现[Content_Types]，询问chatgpt后得出这是一个zip文件，于是改后缀为zip,发现里面有很多文件，在里面发现有一个flag文件夹，打开后里面有一个flag.txt,打开后又得到一个假的flag:flag{Not_So_Easy_Stupid_Boy},这时候已经红温了。这时候打开没用的东西这一个文件夹，发现里面有一个ex.txt,打开后发现：我忘记这个软盘该怎么打开了。瞬间感觉在哪里见过。同时又打开file文件夹，发现里面有一个file文件，打开后显示乱码，再用010 Editor打开在开头发现了CTF.SHOW,这时候终于想起来了这道题做过，原题目在ctfshow的misc的misc2,于是照着过程以及之前写的记忆写了一遍：新建虚拟机，在软盘驱动器处选择使用软盘映像文件，选择那个file文件，最后打开后出现了这个flag.</p>
+<p>(还是刷题多好啊）</p>
+<h4 id="Flag-1"><a href="#Flag-1" class="headerlink" title="Flag:"></a>Flag:</h4><p>flag{ctfshow}</p>
+<h2 id="题目三"><a href="#题目三" class="headerlink" title="题目三"></a>题目三</h2><h2 id="题目信息-2"><a href="#题目信息-2" class="headerlink" title="题目信息"></a>题目信息</h2><ul>
+<li><strong>题目名称：</strong> misc2</li>
+<li><strong>类别：</strong> Misc   </li>
+<li><strong>题目描述：</strong>  呆在猪圈里也要会使用 foremost 噢</li>
+<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="http://10.115.1.252:6543/assets/1c8dee66ca4cf7dd34120cef4dc93272301522fe41ada7d82b2efbe2be5e2bf5/aihe.zip">aihe.zip</a></li>
+</ul>
+<hr>
+<p><strong>第3题：</strong></p>
+<h3 id="解题思路、步骤：-2"><a href="#解题思路、步骤：-2" class="headerlink" title="解题思路、步骤："></a>解题思路、步骤：</h3><p>首先看题目有点懵逼，然后下载了这个附件，打开后发现是一个音频，但是却有一张照片，想到提示：foremost，于是把这个音频拖到了那里，最后得到了一张照片。很明显能看出这张照片下面被隐藏了一部分，查看属性发现高度很小才371，于是用010 Editor 打开，同时查询网上怎样调整高度，把鼠标放到16进制(0:00A0,3)处，发现01详细为371，然后将这个改为02（看到旁边都是2，蒙的），保存后查看照片，发现下边隐藏的出现了，出现一堆奇怪字符还是手写，问了chargpt,它解不出来于是又打开了<a target="_blank" rel="noopener" href="https://blog.csdn.net/Aluxian_/article/details/141812967">https://blog.csdn.net/Aluxian_/article/details/141812967</a>，发现里面有一个猪圈密码，用解密网站：<a target="_blank" rel="noopener" href="http://moersima.00cha.net/zhuquan.asp">http://moersima.00cha.net/zhuquan.asp</a>，解码后得出flag.，不过要加flag{}.</p>
+<h4 id="Flag-2"><a href="#Flag-2" class="headerlink" title="Flag:"></a>Flag:</h4><p>flag{well done}</p>
+<h2 id="题目四"><a href="#题目四" class="headerlink" title="题目四"></a>题目四</h2><h2 id="题目信息-3"><a href="#题目信息-3" class="headerlink" title="题目信息"></a>题目信息</h2><ul>
+<li><strong>题目名称：</strong> 不确定，再看看</li>
+<li><strong>类别：</strong> Misc   </li>
+<li><strong>题目描述：</strong>  做题做累了吧，给你准备了一道钢琴曲，要仔细听哦！我藏得很深。</li>
+<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="http://10.115.1.252:6543/assets/19e1f88701f49f0a2c85e136716a3cdecb285dd7358dcd3196436d824bd5584c/%E4%B8%8D%E7%A1%AE%E5%AE%9A%EF%BC%8C%E5%86%8D%E7%9C%8B%E7%9C%8B%20%20%E9%99%84%E4%BB%B6.zip">不确定，再看看</a></li>
+</ul>
+<hr>
+<p><strong>第4题：</strong></p>
+<h3 id="解题思路、步骤：-3"><a href="#解题思路、步骤：-3" class="headerlink" title="解题思路、步骤："></a>解题思路、步骤：</h3><p>首先下载附件，打开后是一个百度网盘文件，于是下了半天，最后得到了一个zip文件，里面有一个音频文件，放到在线音频分析工具里面，没有结果。然后尝试用010 Editor 打开发现里面有敏感字符：base64.txt,然后用DeepSound发现里面有一个base64.txt文件，打开发现是一个base64编码的，然后猜测是base64隐写，然后在网上找脚本，跑出来后得到flag。</p>
+<h4 id="Flag-3"><a href="#Flag-3" class="headerlink" title="Flag:"></a>Flag:</h4><p>flag{ba5e64_hiding_1s_s0_in7erest1ng!}</p>
+<h2 id="题目五"><a href="#题目五" class="headerlink" title="题目五"></a>题目五</h2><h2 id="题目信息-4"><a href="#题目信息-4" class="headerlink" title="题目信息"></a>题目信息</h2><ul>
+<li><strong>题目名称：</strong> 扫描二维码</li>
+<li><strong>类别：</strong> Misc   </li>
+<li><strong>题目描述：</strong>  </li>
+<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="http://10.115.1.252:6543/assets/3ba9a1cd70c37f9b60745d0a19d7081e5c011d8ebb594dd8e40aebd98476a98c/pic%20(4).png">pic(4).png</a></li>
+</ul>
+<hr>
+<p><strong>第5题：</strong></p>
+<h3 id="解题思路、步骤：-4"><a href="#解题思路、步骤：-4" class="headerlink" title="解题思路、步骤："></a>解题思路、步骤：</h3><p>下载附件发现是一个二维码，然后在网上找在线二维码扫描工具，结果是一些二进制，然后丢给chatgpt,它先是转为十进制再转为ASCII码，发现直接解出来了一个类似于flag,但是最后是错的。然后我仔细研究后才发现一个字母后面跟一个数字，于是我让chatgpt去整合，没想到它坑我，直到我自己亲自去掉数字才知道它把falg改为flag,最后也提交成功了。</p>
+<h4 id="Flag-4"><a href="#Flag-4" class="headerlink" title="Flag:"></a>Flag:</h4><p>falg{DDL-is-best-productivity}</p>
+<h2 id="题目六"><a href="#题目六" class="headerlink" title="题目六"></a>题目六</h2><h2 id="题目信息-5"><a href="#题目信息-5" class="headerlink" title="题目信息"></a>题目信息</h2><ul>
+<li><strong>题目名称：</strong> 旗是什么？</li>
+<li><strong>类别：</strong> Misc   </li>
+<li><strong>题目描述：</strong>  米奇回到了米奇妙妙屋，这时候需要念出奇妙的咒语 “米斯卡，慕斯卡，米老鼠！” 但是没有起作用，这时，天上飘来一张纸，上面写着： 公正文明和谐文明法治富强和谐民主公正自由平等爱国自由文明法治 民主公正文明和谐和谐自由文明公正敬业公正和谐公正友善爱国自由 诚信富强公正敬业平等敬业和谐文明平等诚信富强法治民主公正和谐 平等民主和谐友善法治和谐诚信和谐</li>
+<li><strong>附件下载：</strong> 无</li>
+</ul>
+<hr>
+<p><strong>第6题：</strong></p>
+<h3 id="解题思路、步骤：-5"><a href="#解题思路、步骤：-5" class="headerlink" title="解题思路、步骤："></a>解题思路、步骤：</h3><p>这是一道纯粹的解密题，在看到一堆社会主义核心价值观，幸亏之前做过这道题，于是用社会主义核心价值观解码工具解码，解码后发现是一个base64解码，再进行解码，解码后出现了一个全是字母的密码，这时已经有点蒙了，于是问了问chatgpt，得到了一些解决方法，于是一个一个试。最后用凯撒密码暴力解码偏移9得到了一个比较像的密码，这时候又蒙了，于是在一番苦想后得到了一个可能的解码方式，栅栏解码，于是再次暴力尝试，最后终于得到了flag.</p>
+<h4 id="Flag-5"><a href="#Flag-5" class="headerlink" title="Flag:"></a>Flag:</h4><p>flag{is what is flag}</p>
+<h1 id="题目七"><a href="#题目七" class="headerlink" title="题目七"></a>题目七</h1><h2 id="题目信息-6"><a href="#题目信息-6" class="headerlink" title="题目信息"></a>题目信息</h2><ul>
+<li><strong>题目名称：</strong> 杰哥不要啊</li>
+<li><strong>类别：</strong> Misc   </li>
+<li><strong>题目描述：</strong> 我有重新调整 画质跟音质 可以慢慢享用</li>
+</ul>
+<p>有看到很多网友关心 觉得玩杰哥梗会不会感到不适 跟大家解释一下</p>
+<p>现在这角色，在几年前已经打从心底接受 杰哥也是我人生的一部分</p>
+<p>很开心很幸运 演到这角色 杰哥这名字让我认识了很多人 交了很多朋友</p>
+<p>现在我自己都会玩这个梗 人在世上开心快乐最重要 这世界需要欢笑 来温暖 辛苦的大家</p>
+<p>能在网路世界用这角色跟大家互动 我觉得很开心 所以想玩梗叫我杰哥 或是 铁牛都可以的 这些称呼，都是我！ 不就是称呼而已大家开心就好</p>
+<ul>
+<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1rA411g7q8">外部链接</a></li>
+</ul>
+<hr>
+<p><strong>第7题：</strong></p>
+<h3 id="解题思路、步骤：-6"><a href="#解题思路、步骤：-6" class="headerlink" title="解题思路、步骤："></a>解题思路、步骤：</h3><p>刚开始点击链接进去：是一个关于杰哥的视频，第一个想法flag藏在弹幕里，但是当我看完后发现没有，然后我就用了web的解题方法，检查页面，发现也没线索，于是就废弃了这道题。之后，再次打开这道题，发现网址似乎有些不对，反正比赛也快结束了，于是抱着试一试的心态截取了BV1rA411g7q8，在经过一番尝试后得到了flag,真是没想到。</p>
+<h4 id="Flag-6"><a href="#Flag-6" class="headerlink" title="Flag:"></a>Flag:</h4><p>flag{BV1rA411g7q8}</p>
+<h1 id="题目八"><a href="#题目八" class="headerlink" title="题目八"></a>题目八</h1><h2 id="题目信息-7"><a href="#题目信息-7" class="headerlink" title="题目信息"></a>题目信息</h2><ul>
+<li><strong>题目名称：</strong> 爆破哦</li>
+<li><strong>类别：</strong> Misc   </li>
+<li><strong>题目描述：</strong> 无</li>
+<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="http://10.115.1.252:6543/assets/0a84feab5998d4dbf41d9d27bfedf686c68fa3b480366aca20b799c5e3ef8b56/%E7%88%86%E7%A0%B4%E5%93%A6%E9%99%84%E4%BB%B6.zip">爆破哦附件</a></li>
+</ul>
+<hr>
+<p><strong>第8题：</strong></p>
+<h3 id="解题思路、步骤：-7"><a href="#解题思路、步骤：-7" class="headerlink" title="解题思路、步骤："></a>解题思路、步骤：</h3><p>在看到题目后我就知道要用爆破了，回想起招新赛学长讲的题，拿出了许久不用的Advanced Archive Password Recovery，于是把这个文件放了进去，结果得到了一个密码：fish,然后想到这个文件可能有问题，于是用010 Editor 打开发现敏感词flag.txt，于是更改后缀名为txt,发现里面有个文件但是需要密码，用fish打开后得到一个密码，然后用base64解码解出flag.</p>
+<h4 id="Flag-7"><a href="#Flag-7" class="headerlink" title="Flag:"></a>Flag:</h4><p>flag{giuhb3hhihevjhichj8dncvhb5cfgh}</p>
+<h1 id="题目九"><a href="#题目九" class="headerlink" title="题目九"></a>题目九</h1><h2 id="题目信息-8"><a href="#题目信息-8" class="headerlink" title="题目信息"></a>题目信息</h2><ul>
+<li><strong>题目名称：</strong> 看看文件名</li>
+<li><strong>类别：</strong> Misc   </li>
+<li><strong>题目描述：</strong> ————我真的提示的很明显了</li>
+<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="http://10.115.1.252:6543/assets/3c63af6ade150dd4057251eab485692cf1dcfa06e0ea598459a7a0f4068e66b1/flag.png">flag</a></li>
+</ul>
+<hr>
+<p><strong>第9题;</strong></p>
+<h3 id="解题思路、步骤：-8"><a href="#解题思路、步骤：-8" class="headerlink" title="解题思路、步骤："></a>解题思路、步骤：</h3><p>下载完附件发现打开不了，于是想到提示：看看文件名。确实，flag是文本内容于是改后缀为zip,点进去发现一个文件夹，点开后得到flag.</p>
+<h4 id="Flag-8"><a href="#Flag-8" class="headerlink" title="Flag:"></a>Flag:</h4><p>flag{flag}</p>
+<h1 id="题目十"><a href="#题目十" class="headerlink" title="题目十"></a>题目十</h1><h2 id="题目信息-9"><a href="#题目信息-9" class="headerlink" title="题目信息"></a>题目信息</h2><ul>
+<li><strong>题目名称：</strong> 不止加密一次哦</li>
+<li><strong>类别：</strong> Crypto</li>
+<li><strong>题目描述：</strong> 是一种食物哦,答案用小写</li>
+<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="http://10.115.1.252:6543/assets/da87b7b71cb9ed92d6c712c1da27b2f822e8d8eb5bae7f99586c75ea9876647e/%E4%B8%8D%E6%AD%A2%E5%8A%A0%E5%AF%86%E4%B8%80%E6%AC%A1%E5%93%A6%E9%99%84%E4%BB%B6.txt">不止加密一次哦附件.txt</a></li>
+</ul>
+<hr>
+<p><strong>第10题;</strong></p>
+<h3 id="解题思路、步骤：-9"><a href="#解题思路、步骤：-9" class="headerlink" title="解题思路、步骤："></a>解题思路、步骤：</h3><p>下载附件，打开后是一串摩斯密码，解密后，是BAABAAABBBABAAABAAABABAAABAAABAAAAAABBAABAAABBABAAAABAABAAAA，然后想到提示的食物<a target="_blank" rel="noopener" href="https://blog.csdn.net/Aluxian_/article/details/141812967">https://blog.csdn.net/Aluxian_/article/details/141812967</a>，发现也没有，于是问浏览器，浏览器中有一种解密方式正好可以：培根密码，解出后为THISISANSWER,转为小写：thisisanswer，解出flag</p>
+<h4 id="Flag-9"><a href="#Flag-9" class="headerlink" title="Flag:"></a>Flag:</h4><p>flag{thisisanswer}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <blockquote class="article-copyright">
+    <p><strong><span class="icon-user icon"></span>本文作者：</strong>Landon298 @ Landon298 Blog</p>
+    <p><strong><span class="icon-link icon"></span>本文链接：</strong><a href="https://landon298.github.io/2024/12/14/%E7%BB%83%E4%B9%A0%E8%B5%9B0x01%E9%A2%98%E8%A7%A3/">https://landon298.github.io/2024/12/14/%E7%BB%83%E4%B9%A0%E8%B5%9B0x01%E9%A2%98%E8%A7%A3/</a></p>
+    <p><strong><span class="icon-pencil icon"></span>本文标题：</strong>「练习赛0x01题解(纯文本版)」</p>
+    
+    
+    <p><strong><span class="icon-copyright icon"></span>本文版权：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener external nofollow noreferrer" target="_blank"><span class="icon-creative-commons"></span>BY-NC-SA</a> 许可协议。转载请注明出处！</p>
+    <span class="icon-creative-commons article-copyright-bg"></span>
+  </blockquote>
+      
+      
+        <div class="sponsor-wrapper">
+  <div class="sponsor-button-wrapper">
+    <div class="sponsor-icon rotate"></div>
+    <div class="sponsor-title">赞助</div>
+    <div class="sponsor-icon rotate"></div>
+  </div>
+  <div class="sponsor-tip">请作者喝杯咖啡吧！</div>
+  
+    <div class="sponsor-qr">
+      
+        <div class="sponsor-qr-image-wrapper">
+          <img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250211151927792.jpg" alt=支付宝 width="200" />
+          <p class="sponsor-qr-name">支付宝</p>
+        </div>
+      
+        <div class="sponsor-qr-image-wrapper">
+          <img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250211152022983.jpg" alt=微信 width="200" />
+          <p class="sponsor-qr-name">微信</p>
+        </div>
+      
+    </div>
+  
+</div>
+      
+      
+        <div class="share-wrapper">
+  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flandon298.github.io%2F2024%2F12%2F14%2F%25E7%25BB%2583%25E4%25B9%25A0%25E8%25B5%259B0x01%25E9%25A2%2598%25E8%25A7%25A3%2F" target="_blank" rel="noopener noreferrer" title="练习赛0x01题解(纯文本版)">
+      <div class="share-icon icon icon-facebook">
+        
+      </div>
+    </a>
+  
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Flandon298.github.io%2F2024%2F12%2F14%2F%25E7%25BB%2583%25E4%25B9%25A0%25E8%25B5%259B0x01%25E9%25A2%2598%25E8%25A7%25A3%2F&amp;text=%E7%BB%83%E4%B9%A0%E8%B5%9B0x01%E9%A2%98%E8%A7%A3(%E7%BA%AF%E6%96%87%E6%9C%AC%E7%89%88)&amp;via=https%3A%2F%2FLandon298.github.io" target="_blank" rel="noopener noreferrer" title="练习赛0x01题解(纯文本版)">
+      <div class="share-icon icon icon-twitter">
+        
+      </div>
+    </a>
+  
+    <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Flandon298.github.io%2F2024%2F12%2F14%2F%25E7%25BB%2583%25E4%25B9%25A0%25E8%25B5%259B0x01%25E9%25A2%2598%25E8%25A7%25A3%2F&amp;title=%E7%BB%83%E4%B9%A0%E8%B5%9B0x01%E9%A2%98%E8%A7%A3(%E7%BA%AF%E6%96%87%E6%9C%AC%E7%89%88)&amp;summary=%E7%BB%83%E4%B9%A0%E8%B5%9B0x01%E9%A2%98%E8%A7%A3(%E7%BA%AF%E6%96%87%E6%9C%AC%E7%89%88)&amp;mini=true&amp;ro=true" target="_blank" rel="noopener noreferrer" title="练习赛0x01题解(纯文本版)">
+      <div class="share-icon icon icon-linkedin">
+        
+      </div>
+    </a>
+  
+    <a href="https://www.reddit.com/submit?url=https%3A%2F%2Flandon298.github.io%2F2024%2F12%2F14%2F%25E7%25BB%2583%25E4%25B9%25A0%25E8%25B5%259B0x01%25E9%25A2%2598%25E8%25A7%25A3%2F&amp;title=%E7%BB%83%E4%B9%A0%E8%B5%9B0x01%E9%A2%98%E8%A7%A3(%E7%BA%AF%E6%96%87%E6%9C%AC%E7%89%88)" target="_blank" rel="noopener noreferrer" title="练习赛0x01题解(纯文本版)">
+      <div class="share-icon icon icon-reddit">
+        
+      </div>
+    </a>
+  
+    <a href="http://service.weibo.com/share/share.php?url=https%3A%2F%2Flandon298.github.io%2F2024%2F12%2F14%2F%25E7%25BB%2583%25E4%25B9%25A0%25E8%25B5%259B0x01%25E9%25A2%2598%25E8%25A7%25A3%2F&amp;appkey=&amp;title=%E7%BB%83%E4%B9%A0%E8%B5%9B0x01%E9%A2%98%E8%A7%A3(%E7%BA%AF%E6%96%87%E6%9C%AC%E7%89%88)&amp;pic=&amp;ralateUid=" target="_blank" rel="noopener noreferrer" title="练习赛0x01题解(纯文本版)">
+      <div class="share-icon icon icon-weibo">
+        
+      </div>
+    </a>
+  
+    <a href="http://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Flandon298.github.io%2F2024%2F12%2F14%2F%25E7%25BB%2583%25E4%25B9%25A0%25E8%25B5%259B0x01%25E9%25A2%2598%25E8%25A7%25A3%2F&amp;title=%E7%BB%83%E4%B9%A0%E8%B5%9B0x01%E9%A2%98%E8%A7%A3(%E7%BA%AF%E6%96%87%E6%9C%AC%E7%89%88)&amp;desc=%E7%BB%83%E4%B9%A0%E8%B5%9B0x01%E9%A2%98%E8%A7%A3(%E7%BA%AF%E6%96%87%E6%9C%AC%E7%89%88)&amp;source=https%3A%2F%2FLandon298.github.io" target="_blank" rel="noopener noreferrer" title="练习赛0x01题解(纯文本版)">
+      <div class="share-icon icon icon-qq">
+        
+      </div>
+    </a>
+  
+    <a href="javascript:;"  title="练习赛0x01题解(纯文本版)">
+      <div class="share-icon icon icon-weixin">
+        
+          <div id="share-weixin">
+            <div class="share-weixin-dom">
+              <div class="share-weixin-content">
+                <img id="share-weixin-banner"> 
+                <div id="share-weixin-title"></div>
+                <div id="share-weixin-desc"></div>
+              </div>
+              <div class="share-weixin-qrcode">
+                <div class="share-weixin-info">
+                  <div id="share-weixin-author"></div>
+                  <div id="share-weixin-theme">Powered By hexo-theme-reimu</div>
+                </div>
+                <img id="share-weixin-qr" >
+              </div>
+            </div>
+            <div class="share-weixin-canvas"></div>
+          </div>
+        
+      </div>
+    </a>
+  
+</div>
+      
+      
+        <a data-aos="zoom-in" href="/2024/12/14/%E7%BB%83%E4%B9%A0%E8%B5%9B0x01%E9%A2%98%E8%A7%A3/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2024/12/14/%E7%BB%83%E4%B9%A0%E8%B5%9B0x01%E9%A2%98%E8%A7%A3/" itemprop="commentCount"></span>
+          留言
+        </a>
+      
+      
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+  <nav id="article-nav" data-aos="fade-up">
+    
+      <div class="article-nav-link-wrap article-nav-link-left">
+        
+          <img data-src="https://i.111666.best/image/iI6QBaOSDmi7ywvQ1pf2z0.jpg" data-sizes="auto" alt="练习赛0x02部分出题及题解" class="lazyload">
+        
+        <a href="/2025/01/02/%E7%BB%83%E4%B9%A0%E8%B5%9B0x02%E9%83%A8%E5%88%86%E5%87%BA%E9%A2%98%E5%8F%8A%E9%A2%98%E8%A7%A3/"></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">
+          
+            练习赛0x02部分出题及题解
+          
+        </h3>
+      </div>
+    
+    
+    <div class="article-nav-link-wrap article-nav-link-right">
+      
+        <img data-src="https://i.111666.best/image/iI6QBaOSDmi7ywvQ1pf2z0.jpg" data-sizes="auto" alt="蓝桥杯选拔赛1-3和6" class="lazyload">
+      
+      <a href="/2024/12/05/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%80%89%E6%8B%94%E8%B5%9B1-3%E5%92%8C6/"></a>
+      <div class="article-nav-caption">后一篇</div>
+      <h3 class="article-nav-title">
+        
+          蓝桥杯选拔赛1-3和6
+        
+      </h3>
+    </div>
+    
+  </nav>
+
+
+</article>
+
+  <section id="comments" class="vcomment" data-aos="fade-up"></section>
+
+
+
+
+
+
+</section>
+        </div>
+        
+        
+        <footer id="footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info">
+    
+    <div>
+      <span class="icon-copyright"></span>
+      2020-2025
+      <span class="footer-info-sep rotate"></span>
+      Landon298
+    </div>
+    
+      <div>
+        基于&nbsp;<a href="https://hexo.io/" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a>&nbsp;
+        Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" rel="noopener external nofollow noreferrer" target="_blank">Reimu</a>
+      </div>
+    
+    
+      <div>
+        <span class="icon-brush"></span>
+        7.2k
+        &nbsp;|&nbsp;
+        <span class="icon-coffee"></span>
+        00:26
+      </div>
+    
+    
+    
+    
+      <div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+      </div>
+    
+  </div>
+</footer>
+
+        
+          <div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div>
+        
+        <div id="mask" class="hide"></div>
+      </div>
+      <nav id="mobile-nav">
+  <div class="sidebar-wrap">
+    
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%80"><span class="toc-number">1.1.</span> <span class="toc-text">题目一</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF"><span class="toc-number">2.</span> <span class="toc-text">题目信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">2.1.</span> <span class="toc-text">解题思路、步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flag"><span class="toc-number">2.1.1.</span> <span class="toc-text">Flag:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BA%8C"><span class="toc-number">3.</span> <span class="toc-text">题目二</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-1"><span class="toc-number">4.</span> <span class="toc-text">题目信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-1"><span class="toc-number">4.1.</span> <span class="toc-text">解题思路、步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flag-1"><span class="toc-number">4.1.1.</span> <span class="toc-text">Flag:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%89"><span class="toc-number">5.</span> <span class="toc-text">题目三</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-2"><span class="toc-number">6.</span> <span class="toc-text">题目信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-2"><span class="toc-number">6.1.</span> <span class="toc-text">解题思路、步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flag-2"><span class="toc-number">6.1.1.</span> <span class="toc-text">Flag:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%9B%9B"><span class="toc-number">7.</span> <span class="toc-text">题目四</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-3"><span class="toc-number">8.</span> <span class="toc-text">题目信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-3"><span class="toc-number">8.1.</span> <span class="toc-text">解题思路、步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flag-3"><span class="toc-number">8.1.1.</span> <span class="toc-text">Flag:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BA%94"><span class="toc-number">9.</span> <span class="toc-text">题目五</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-4"><span class="toc-number">10.</span> <span class="toc-text">题目信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-4"><span class="toc-number">10.1.</span> <span class="toc-text">解题思路、步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flag-4"><span class="toc-number">10.1.1.</span> <span class="toc-text">Flag:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%85%AD"><span class="toc-number">11.</span> <span class="toc-text">题目六</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-5"><span class="toc-number">12.</span> <span class="toc-text">题目信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-5"><span class="toc-number">12.1.</span> <span class="toc-text">解题思路、步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flag-5"><span class="toc-number">12.1.1.</span> <span class="toc-text">Flag:</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%83"><span class="toc-number"></span> <span class="toc-text">题目七</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-6"><span class="toc-number">1.</span> <span class="toc-text">题目信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-6"><span class="toc-number">1.1.</span> <span class="toc-text">解题思路、步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flag-6"><span class="toc-number">1.1.1.</span> <span class="toc-text">Flag:</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%85%AB"><span class="toc-number"></span> <span class="toc-text">题目八</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-7"><span class="toc-number">1.</span> <span class="toc-text">题目信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-7"><span class="toc-number">1.1.</span> <span class="toc-text">解题思路、步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flag-7"><span class="toc-number">1.1.1.</span> <span class="toc-text">Flag:</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B9%9D"><span class="toc-number"></span> <span class="toc-text">题目九</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-8"><span class="toc-number">1.</span> <span class="toc-text">题目信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-8"><span class="toc-number">1.1.</span> <span class="toc-text">解题思路、步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flag-8"><span class="toc-number">1.1.1.</span> <span class="toc-text">Flag:</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%8D%81"><span class="toc-number"></span> <span class="toc-text">题目十</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-9"><span class="toc-number">1.</span> <span class="toc-text">题目信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-9"><span class="toc-number">1.1.</span> <span class="toc-text">解题思路、步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Flag-9"><span class="toc-number">1.1.1.</span> <span class="toc-text">Flag:</span></a></li></ol></li></ol></li></ol>
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="Landon298" class="lazyload">
+  <div class="sidebar-author-name">Landon298</div>
+  <div class="sidebar-description">人性的背后都是白云苍狗，愿你我都要做生活的高手</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">10</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+</div>
+<div class="sidebar-menu">
+  
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">首页</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">归档</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">关于</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+        <div class="sidebar-menu-icon icon rotate">
+          &#xe62b;
+        </div>
+        <div class="sidebar-menu-link">友链</div>
+      </div>
+    
+  
+</div>
+</div>
+    
+  </div>
+  
+    <div class="sidebar-btn-wrapper">
+      <div class="sidebar-toc-btn current"></div>
+      <div class="sidebar-common-btn"></div>
+    </div>
+  
+</nav>
+
+    </div>
+    
+    
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha384-J08i8An&#x2F;QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+  
+<script src="/js/aos.js"></script>
+
+  <script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aosInit);
+    } else {
+      aosInit();
+    }
+  </script>
+
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+
+
+
+
+
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.1.0/dist/index.umd.js" integrity="sha384-KM6i7tu43nYd6e0beIljxHMC5tZc58XBDu7pPA58w50h18Jsx7gLdimfS09RXlKv" crossorigin="anonymous"></script>
+
+  <script>
+    window.firework && window.firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["#ff5252","#ff7c7c","#ffafaf","#ffd0d0"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["#ff0000"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'))
+  </script>
+
+
+
+  
+<script src="https://npm.webcache.cn/theme-shokax-pjax@0.0.3/dist/index.umd.js" integrity="sha384-xneY1WY8hOfUzswrE4CrYq35N4BdVcxqxwHPr9zawE&#x2F;jMSCxD+jAPU55x&#x2F;jj3wlf" crossorigin="anonymous"></script>
+
+  <script>
+    function loadScripts(scripts, index) {
+      if (index < scripts.length) {
+        const script = scripts[index];
+        const src = script.getAttribute('src');
+
+        const loadScript = (scriptContent) => {
+          return new Promise((resolve, reject) => {
+            const scriptElement = document.createElement('script');
+            if (script.type) {
+              scriptElement.type = script.type;
+            }
+            if (script.src) {
+              scriptElement.src = script.src;
+              scriptElement.onload = resolve;
+              scriptElement.onerror = reject;
+            }
+            if (scriptContent) {
+              scriptElement.text = scriptContent;
+            }
+            document.head.appendChild(scriptElement);
+            if (!script.src) {
+              resolve();
+            }
+          })
+          
+        }
+
+        (src ? loadScript() : loadScript(script.text))
+          .then(() => loadScripts(scripts, index + 1))
+          .catch(error => {
+            console.error(`Failed to load script: ${src || 'inline script'}`, error);
+            loadScripts(scripts, index + 1);
+          });
+      }
+    }
+    window.Pjax && new window.Pjax({
+      selectors: [
+        "#header>img",
+        "#header>picture",
+        "head title",
+        "#header-title",
+        "#subtitle-wrap",
+        "#main",
+        "#content",
+        ".sidebar-widget",
+        ".sidebar-wrapper",
+        '#mobile-nav',
+        '#lazy-script'
+      ],
+      switches: {
+        "#content": function(oldEl, newEl) {
+          // for sidebar change
+          oldEl.className = newEl.className;
+          this.onSwitch();
+        },
+        "#header-title": Pjax.switches.outerHTML,
+        "#subtitle-wrap": Pjax.switches.outerHTML,
+        "#main": function(oldEl, newEl) {
+          const scripts = [...newEl.querySelectorAll('script')];
+          loadScripts(scripts, 0);
+          oldEl.outerHTML = newEl.outerHTML
+          this.onSwitch()
+        },
+        "#mobile-nav": Pjax.switches.outerHTML,
+        '#lazy-script': function(oldEl, newEl) {
+          const scripts = [...newEl.querySelectorAll('script')];
+          loadScripts(scripts, 0);
+          oldEl.innerHTML = newEl.innerHTML
+          this.onSwitch()
+        },
+      },
+      cacheBust: false
+    })
+  </script>
+  
+<script src="/js/pjax.js"></script>
+
+
+
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+    
+      
+      
+      <script data-pjax>
+        window.REIMU_POST = {
+          author: "Landon298",
+          title: "练习赛0x01题解(纯文本版)",
+          url: "https://landon298.github.io/2024/12/14/%E7%BB%83%E4%B9%A0%E8%B5%9B0x01%E9%A2%98%E8%A7%A3/",
+          excerpt: "",
+          description: "",
+          stripContent: "前言下面是本萌新第一次完整的写下全部的ctf题，之前练的一直都是web方向的，但是通过在这次测试使我学到了许多misc和crypto的知识。如有错误，欢迎大家来与我交流。 题目一题目信息 题目名称： miao~ 类别： Misc    题目描述：  猫猫真的很可爱捏~ 附件下载： miao~附件.zip   第1题： 解题思路、步骤：打开附件发现里面有一张以jpg为后缀的照片，打开后发现没有有用的信息，于是用到了foremost软件，将这张照片丢到foremost文件夹里面，在生成的output",
+          date: "Sat Dec 14 2024 10:56:24 GMT+0800",
+          updated: "Fri Jan 03 2025 16:30:00 GMT+0800",
+          cover: "https://i.111666.best/image/iI6QBaOSDmi7ywvQ1pf2z0.jpg",
+        };
+      </script>
+       
+    
+    
+      
+        
+<script src="/js/insert_highlight.js" data-pjax></script>
+
+        
+          
+<script src="https://npm.webcache.cn/html-to-image@1.11.11/dist/html-to-image.js" integrity="sha384-UbfRVKN3&#x2F;elS1r7JcK2FhmPP+KlJ4CvYwbyYD7tH+uTkbT9bNJr9eJeQ0FoFbAgz" crossorigin="anonymous" defer data-pjax></script>
+
+          
+<script src="https://npm.webcache.cn/qrcode@1.4.4/build/qrcode.min.js" integrity="sha384-0RsG1yo&#x2F;crf&#x2F;1Qc14sho26SXXOTngNCjgJw7fuvXBt9W&#x2F;OChF&#x2F;Ijx+aUuBDqQwEk" crossorigin="anonymous" defer data-pjax></script>
+
+        
+      
+    
+    
+      <script type="module" data-pjax>
+        const PhotoSwipeLightbox = (await safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js", "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/")).default;
+        
+        const pswp = () => {
+          if (_$$('.article-entry a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-entry',
+              children: 'a.article-gallery-item',
+              pswpModule: () => safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+            }).init();
+          }
+          if(_$$('.article-gallery a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-gallery',
+              children: 'a.article-gallery-item',
+              pswpModule: () => safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+            }).init();
+          }
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script>
+      
+  
+<script src="https://npm.webcache.cn/valine@1.5.1/dist/Valine.min.js" integrity="sha384-3ma91AExDeMAZ1rjTjaP8V2A2obQE+s5ltKRwYlwdpArz9xVbp0tF3b0VV2ACNPn" crossorigin="anonymous" data-pjax></script>
+
+  <script data-pjax>
+    var GUEST_INFO = ['nick', 'mail', 'link'];
+    var guest_info = 'nick,mail,link'.split(',').filter((item) => {
+      return GUEST_INFO.indexOf(item) > -1
+    });
+    var recordIP = JSON.parse('true');
+    var highlight = JSON.parse('true');
+    var visitor = JSON.parse('false');
+
+    if (window.Valine) {
+      new Valine({
+        el: '.vcomment',
+        appId: "KmCQCT7W11hxnWDk1HZDX6nh-gzGzoHsz",
+        appKey: "ugwKOdaBzy87zAvphAQa0nCs",
+        placeholder: "Just go go",
+        pageSize: '10',
+        avatar: 'mp',
+        lang: 'zh-cn',
+        recordIP: recordIP,
+        highlight: highlight,
+        visitor: visitor,
+        requiredFields: guest_info,
+        path: window.location.pathname
+      });
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+    
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '1.3.2' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" integrity="sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S" crossorigin="anonymous" async></script>
+
+
+
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then((registrations) => {
+      for (let registration of registrations) {
+        registration.unregister();
+      }
+    });
+  }
+</script>
+
+
+
+
+
+  
+<script src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js" integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr+h5UfruuRL&#x2F;aORyw+5+HZoU6e" crossorigin="anonymous"></script>
+
+  
+    <script>
+      const ap = new APlayer({
+        container: document.getElementById('aplayer'),
+        audio: [{"name":"哪里都是你","artist":"队长","url":"https://drive.google.com/file/d/19JSr5TDdZqIZkdeD_NEwiE8eBhGwWPPC/view?usp=sharing","cover":"https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250211152847849.jpg"}] || [],
+        fixed: false || false,
+        autoplay: false || false,
+        loop: 'true' || 'all',
+        order: 'random' || 'list',
+        preload: 'auto' || 'auto',
+        volume: 0.5 || 0.7,
+        mutex: true || true,
+        listFolded: true || false,
+      });
+    </script>
+  
+
+
+
+  </body>
+  </html>
+
