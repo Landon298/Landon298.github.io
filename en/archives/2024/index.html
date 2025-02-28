@@ -1,11 +1,11 @@
 
   <!DOCTYPE html>
-<html lang="zh-CN"  
-
-  data-theme-mode="auto"
-
->
-<head>
+  <html lang="zh-CN"  
+    
+      data-theme-mode="auto"
+    
+  >
+  <head>
   <meta charset="utf-8">
   
 
@@ -16,6 +16,7 @@
   <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_0khxww3tj3q9';window.REIMU_CONFIG.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ","copyright":{"enable":false,"count":50,"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！"}};window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://Landon298.github.io';window.REIMU_CONFIG.i18n_languages = ["en"];</script>
   
   <title>
+    Archives: 2024 |
     
     Landon298 Blog
   </title>
@@ -33,10 +34,10 @@
     <meta name="description" content="人性的背后都是白云苍狗，愿你我都要做生活的高手。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Landon298 Blog">
-<meta property="og:url" content="https://landon298.github.io/404.html">
+<meta property="og:url" content="https://landon298.github.io/en/archives/2024/">
 <meta property="og:site_name" content="Landon298 Blog">
 <meta property="og:description" content="人性的背后都是白云苍狗，愿你我都要做生活的高手。">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://landon298.github.io/images/banner.webp">
 <meta property="article:author" content="Landon298">
 <meta property="article:tag" content="AI,CTF,编程,区块链">
@@ -71,31 +72,78 @@
   
 <meta name="generator" content="Hexo 7.3.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <div id="header-nav">
+  <body>
+    
+  <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi">
+        
+          <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+           M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg>
+        
+      </div>
+      <div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    var endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script>
+
+<div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
   <nav id="main-nav">
     
       
         <span class="main-nav-link-wrap">
           <div class="main-nav-icon icon-taichi"></div>
-          <a class="main-nav-link" href="/">首页</a>
+          <a class="main-nav-link" href="/en/">Home</a>
         </span>
       
         <span class="main-nav-link-wrap">
           <div class="main-nav-icon icon-taichi"></div>
-          <a class="main-nav-link" href="/archives">归档</a>
+          <a class="main-nav-link" href="/en/archives">Archives</a>
         </span>
       
         <span class="main-nav-link-wrap">
           <div class="main-nav-icon icon-taichi"></div>
-          <a class="main-nav-link" href="/about">关于</a>
+          <a class="main-nav-link" href="/en/about">About</a>
         </span>
       
         <span class="main-nav-link-wrap">
           <div class="main-nav-icon icon-taichi"></div>
-          <a class="main-nav-link" href="/friend">友链</a>
+          <a class="main-nav-link" href="/en/friend">Friend</a>
         </span>
       
     
@@ -103,7 +151,7 @@
   </nav>
   <nav id="sub-nav">
     
-      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅" target="_blank"></a>
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed" target="_blank"></a>
     
     
     
@@ -114,13 +162,13 @@
       <div class="custom-dropdown">
         <div class="select-selected" id="select-selected">
           <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
-          <span id="selected-lang">简体中文</span>
+          <span id="selected-lang">English</span>
         </div>
         <ul class="select-items" id="select-items">
           
-            <li data-value="zh-CN" class="selected">简体中文</li>
+            <li data-value="zh-CN" >简体中文</li>
           
-            <li data-value="en" >English</li>
+            <li data-value="en" class="selected">English</li>
           
         </ul>
       </div>
@@ -138,9 +186,9 @@
           item.addEventListener("click", () => {
             const langMap = {};
             
-              langMap['zh-CN'] = '/404.html';
+              langMap['zh-CN'] = '/archives/2024/';
             
-              langMap['en'] = '/en/404.html';
+              langMap['en'] = '/en/archives/2024/';
             
             selectedLang.textContent = item.textContent;
             selectItems.classList.remove("show");
@@ -182,23 +230,322 @@
   <div id="header-outer">
     <div id="header-title">
       
-        <a href="/" id="logo">
-          <h1 data-aos="slide-up">4 0 4 (ﾟ⊿ﾟ)ﾂ</h1>
-        </a>
+        
+        
+          <a href="/" id="logo">
+            <h1 data-aos="slide-up">Archives</h1>
+          </a>
+        
       
       
+        
         <h2 id="subtitle-wrap" data-aos="slide-down">
-          <a href="/" id="subtitle">満 身 創 痍</a>
+          
+            <a href="/" id="subtitle">2024</a>
+          
         </h2>
       
     </div>
   </div>
 </header>
 
+        <div id="content" class="sidebar-left"  >
+          <aside id="sidebar">
+  
+  
+  <div class="sidebar-wrapper ">
+    <div class="sidebar-wrap" data-aos="fade-up">
+      
+        <div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="Landon298" class="lazyload">
+  <div class="sidebar-author-name">Landon298</div>
+  <div class="sidebar-description">人性的背后都是白云苍狗，愿你我都要做生活的高手。</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Post</div>
+    <div class="sidebar-state-number">12</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>Category</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>Tag</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/D-Sketon itemprop="url" target="_blank" aria-label="github" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+</div>
+<div class="sidebar-menu">
+  
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/" aria-label="Home"></a>
+        <div class="sidebar-menu-icon icon-taichi"></div>
+        <div class="sidebar-menu-link">Home</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/archives" aria-label="Archives"></a>
+        <div class="sidebar-menu-icon icon-taichi"></div>
+        <div class="sidebar-menu-link">Archives</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/about" aria-label="About"></a>
+        <div class="sidebar-menu-icon icon-taichi"></div>
+        <div class="sidebar-menu-link">About</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/friend" aria-label="Friend"></a>
+        <div class="sidebar-menu-icon icon-taichi"></div>
+        <div class="sidebar-menu-link">Friend</div>
+      </div>
+    
+  
+</div>
+
+      
+      
     </div>
   </div>
+
+  <div class="sidebar-widget">
   
+    
+      
+
+    
   
+  </div>
+</aside>
+
+          <section id="main">
+<div class="archives-outer-wrap" data-aos="fade-up">
+  <div class="tag-wrap">
+    
+  </div>
+  <div class="category-wrap">
+    
+  </div>
+  
+    
+    
+    
+      
+      
+        
+        
+        <section class="archives-wrap" data-aos="fade-up">
+          <div class="archive-year-wrap">
+            <a href="/en/archives/2024" class="archive-year">2024</a>
+          </div>
+          <ul>
+            
+            <li class="archive-article">
+  <div class="archive-article-date-wrap">
+    <span>
+      <time class="dt-published" datetime="2024-12-14T02:56:24.000Z" itemprop="datePublished">12-14</time>
+    </span>
+  </div>
+  
+    <a class="archive-article-title" href="/en/2024/12/14/undefined/">练习赛0x01题解(纯文本版)</a>
+  
+</li>
+
+            
+      
+      
+            <li class="archive-article">
+  <div class="archive-article-date-wrap">
+    <span>
+      <time class="dt-published" datetime="2024-12-05T12:35:00.000Z" itemprop="datePublished">12-05</time>
+    </span>
+  </div>
+  
+    <a class="archive-article-title" href="/en/2024/12/05/undefined/">蓝桥杯选拔赛1-3和6</a>
+  
+</li>
+
+            
+      
+      
+            <li class="archive-article">
+  <div class="archive-article-date-wrap">
+    <span>
+      <time class="dt-published" datetime="2024-12-01T13:36:13.000Z" itemprop="datePublished">12-01</time>
+    </span>
+  </div>
+  
+    <a class="archive-article-title" href="/en/2024/12/01/undefined/">&lt; string.h 函数介绍</a>
+  
+</li>
+
+            
+      
+      
+            <li class="archive-article">
+  <div class="archive-article-date-wrap">
+    <span>
+      <time class="dt-published" datetime="2024-11-29T11:42:25.000Z" itemprop="datePublished">11-29</time>
+    </span>
+  </div>
+  
+    <a class="archive-article-title" href="/en/2024/11/29/undefined/">有趣的剪刀、石头、布</a>
+  
+</li>
+
+            
+      
+      
+            <li class="archive-article">
+  <div class="archive-article-date-wrap">
+    <span>
+      <time class="dt-published" datetime="2024-11-13T05:42:40.000Z" itemprop="datePublished">11-13</time>
+    </span>
+  </div>
+  
+    <a class="archive-article-title" href="/en/2024/11/13/undefined/">入坑</a>
+  
+</li>
+
+            
+            
+          </ul>
+        </section>
+    
+  
+  </div>
+
+
+
+</section>
+        </div>
+        
+        
+        <footer id="footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info">
+    
+    <div>
+      <span class="icon-copyright"></span>
+      2020-2025
+      <span class="footer-info-sep rotate"></span>
+      Landon298
+    </div>
+    
+      <div>
+        基于&nbsp;<a href="https://hexo.io/" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a>&nbsp;
+        Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" rel="noopener external nofollow noreferrer" target="_blank">Reimu</a>
+      </div>
+    
+    
+      <div>
+        <span class="icon-brush"></span>
+        14.7k
+        &nbsp;|&nbsp;
+        <span class="icon-coffee"></span>
+        00:53
+      </div>
+    
+    
+    
+    
+      <div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+      </div>
+    
+  </div>
+</footer>
+
+        
+          <div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div>
+        
+        <div id="mask" class="hide"></div>
+      </div>
+      <nav id="mobile-nav">
+  <div class="sidebar-wrap">
+    
+      <div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="Landon298" class="lazyload">
+  <div class="sidebar-author-name">Landon298</div>
+  <div class="sidebar-description">人性的背后都是白云苍狗，愿你我都要做生活的高手。</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Post</div>
+    <div class="sidebar-state-number">12</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>Category</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>Tag</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/D-Sketon itemprop="url" target="_blank" aria-label="github" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+</div>
+<div class="sidebar-menu">
+  
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/" aria-label="Home"></a>
+        <div class="sidebar-menu-icon icon-taichi"></div>
+        <div class="sidebar-menu-link">Home</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/archives" aria-label="Archives"></a>
+        <div class="sidebar-menu-icon icon-taichi"></div>
+        <div class="sidebar-menu-link">Archives</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/about" aria-label="About"></a>
+        <div class="sidebar-menu-icon icon-taichi"></div>
+        <div class="sidebar-menu-link">About</div>
+      </div>
+    
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/friend" aria-label="Friend"></a>
+        <div class="sidebar-menu-icon icon-taichi"></div>
+        <div class="sidebar-menu-link">Friend</div>
+      </div>
+    
+  
+</div>
+
+    
+  </div>
+  
+</nav>
+
+    </div>
+    
+    
 <script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
 
 
@@ -442,7 +789,6 @@
 
 
 
-</body>
-</html>
-
+  </body>
+  </html>
 
