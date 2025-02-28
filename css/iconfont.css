@@ -123,6 +123,9 @@
   font-family: "iconfont";
   content: "\e630";
 }
+.icon-github:before {
+  content: "\e619";
+}
 .icon-facebook:before {
   content: "\e60e";
 }
