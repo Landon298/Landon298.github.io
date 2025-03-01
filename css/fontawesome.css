@@ -133,6 +133,9 @@
 .icon-linkedin:before {
   content: "\f08c";
 }
+.icon-bilibili:before {
+  content: "\e3d9";
+}
 .icon-weibo:before {
   content: "\f18a";
 }

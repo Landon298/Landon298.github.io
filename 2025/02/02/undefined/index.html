@@ -13,7 +13,7 @@
 
   
 
-  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_0khxww3tj3q9';window.REIMU_CONFIG.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ","copyright":{"enable":false,"count":50,"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！"}};window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://Landon298.github.io';window.REIMU_CONFIG.i18n_languages = ["en"];</script>
+  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_0khxww3tj3q9';window.REIMU_CONFIG.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ","copyright":{"enable":true,"count":50,"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！"}};window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://Landon298.github.io';window.REIMU_CONFIG.i18n_languages = ["en"];</script>
   
   <title>
     手把手教你DeepSeek本地部署 |
@@ -48,9 +48,14 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250202140747434.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250202141313182.png">
 <meta property="article:published_time" content="2025-02-02T03:58:47.000Z">
-<meta property="article:modified_time" content="2025-02-28T09:36:42.642Z">
+<meta property="article:modified_time" content="2025-03-01T11:26:51.690Z">
 <meta property="article:author" content="Landon298">
-<meta property="article:tag" content="AI,CTF,编程,区块链">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="CTF">
+<meta property="article:tag" content="c">
+<meta property="article:tag" content="c++">
+<meta property="article:tag" content="区块链">
+<meta property="article:tag" content="杂谈">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250202121704806.png">
   
@@ -81,6 +86,10 @@
 <link rel="stylesheet" href="https://npm.webcache.cn/@reimujs/aos@0.1.0/dist/aos.css">
 
   
+  
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css">
+
   
 <meta name="generator" content="Hexo 7.3.0"></head>
 
@@ -270,7 +279,7 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>文章</div>
-    <div class="sidebar-state-number">12</div>
+    <div class="sidebar-state-number">11</div>
   </div>
   <div class="sidebar-state-category">
     <div>分类</div>
@@ -278,13 +287,17 @@
   </div>
   <div class="sidebar-state-tag">
     <div>标签</div>
-    <div class="sidebar-state-number">0</div>
+    <div class="sidebar-state-number">6</div>
   </div>
 </div>
 <div class="sidebar-social">
   
     <div class="icon-github sidebar-social-icon">
       <a href=https://github.com/D-Sketon itemprop="url" target="_blank" aria-label="github" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-bilibili sidebar-social-icon">
+      <a href=https://space.bilibili.com/77250 itemprop="url" target="_blank" aria-label="bilibili" rel="noopener external nofollow noreferrer"></a>
     </div>
   
 </div>
@@ -339,7 +352,7 @@
       <div class="article-date">
   <span class="article-date-link" data-aos="zoom-in">
     <time datetime="2025-02-02T03:58:47.000Z" itemprop="datePublished">2025-02-02</time>
-    <time style="display: none;" id="post-update-time">2025-02-28</time>
+    <time style="display: none;" id="post-update-time">2025-03-01</time>
   </span>
 </div>
 
@@ -491,8 +504,15 @@
       
       
       
+        <span data-aos="zoom-in" id="/2025/02/02/undefined/" class="leancloud_visitors article-visitor-link" data-flag-title="手把手教你DeepSeek本地部署">
+          <span class="leancloud-visitors-count">0</span>
+          <em class="post-meta-item-text">阅读量</em>
+        </span>
       
       
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/CTF/" rel="tag">CTF</a></li><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/c/" rel="tag">c++</a></li><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" rel="tag">区块链</a></li><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/%E6%9D%82%E8%B0%88/" rel="tag">杂谈</a></li></ul>
+
 
     </footer>
   </div>
@@ -543,6 +563,8 @@
 </section>
         </div>
         
+          <div id="aplayer" theme="var(--color-link)" data-aos="fade-up"></div>
+        
         
         <footer id="footer">
   <div style="width: 100%; overflow: hidden">
@@ -565,10 +587,10 @@
     
       <div>
         <span class="icon-brush"></span>
-        14.7k
+        14.5k
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
-        00:53
+        00:52
       </div>
     
     
@@ -613,7 +635,7 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>文章</div>
-    <div class="sidebar-state-number">12</div>
+    <div class="sidebar-state-number">11</div>
   </div>
   <div class="sidebar-state-category">
     <div>分类</div>
@@ -621,13 +643,17 @@
   </div>
   <div class="sidebar-state-tag">
     <div>标签</div>
-    <div class="sidebar-state-number">0</div>
+    <div class="sidebar-state-number">6</div>
   </div>
 </div>
 <div class="sidebar-social">
   
     <div class="icon-github sidebar-social-icon">
       <a href=https://github.com/D-Sketon itemprop="url" target="_blank" aria-label="github" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-bilibili sidebar-social-icon">
+      <a href=https://space.bilibili.com/77250 itemprop="url" target="_blank" aria-label="bilibili" rel="noopener external nofollow noreferrer"></a>
     </div>
   
 </div>
@@ -880,7 +906,7 @@
           description: "",
           stripContent: "前言 DeepSeek这个开源模型正在改写全球的AI游戏规则。最新发布的DeepSeek-R1推理模型，在数学解题、代码生成等专业领域竟然可以硬刚OpenAI的付费o1模型。更疯狂的是它可以免费部署到你的电脑上，今天就教你快速拥有这头AI模型。 第一步 在Ollama官网下载适配你系统的客户端，安装后运行软件，确保在任务栏出现这个小羊驼的图标。    第二步 在Ollama官网搜索deepseek-r1,你会发现有很多不同大小的模型，不同大小的模型适配不同的设备，下面是一张表格供大家参考，从而确",
           date: "Sun Feb 02 2025 11:58:47 GMT+0800",
-          updated: "Fri Feb 28 2025 17:36:42 GMT+0800",
+          updated: "Sat Mar 01 2025 19:26:51 GMT+0800",
           cover: "https://i.111666.best/image/iI6QBaOSDmi7ywvQ1pf2z0.jpg",
         };
       </script>
@@ -940,7 +966,7 @@
     });
     var recordIP = JSON.parse('true');
     var highlight = JSON.parse('true');
-    var visitor = JSON.parse('false');
+    var visitor = JSON.parse('true');
 
     if (window.Valine) {
       new Valine({
@@ -949,7 +975,7 @@
         appKey: "ugwKOdaBzy87zAvphAQa0nCs",
         placeholder: "Just go go",
         pageSize: '10',
-        avatar: 'mp',
+        avatar: 'monsterid',
         lang: 'zh-cn/en',
         recordIP: recordIP,
         highlight: highlight,
@@ -1009,6 +1035,28 @@
   
 
 
+
+  
+<script src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js" integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr+h5UfruuRL&#x2F;aORyw+5+HZoU6e" crossorigin="anonymous"></script>
+
+  
+    <script>
+      const ap = new APlayer({
+        theme: "var(--color-link)",
+        container: document.getElementById('aplayer'),
+        audio: [{"name":"哪里都是你","artist":"队长","url":"https://drive.google.com/file/d/19JSr5TDdZqIZkdeD_NEwiE8eBhGwWPPC/view?usp=sharing","cover":"https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250211152847849.jpg"}] || [],
+        fixed: true || false,
+        autoplay: false || false,
+        loop: 'true' || 'all',
+        order: 'random' || 'list',
+        preload: 'auto' || 'auto',
+        volume: 0.5 || 0.7,
+        mutex: true || true,
+        listFolded: true || false,
+        lrcType:  || 0,
+      });
+    </script>
+  
 
 
 
