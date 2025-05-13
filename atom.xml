@@ -6,7 +6,7 @@
   <link href="https://landon298.github.io/atom.xml" rel="self"/>
   
   <link href="https://landon298.github.io/"/>
-  <updated>2025-05-13T12:03:57.947Z</updated>
+  <updated>2025-03-01T11:26:51.690Z</updated>
   <id>https://landon298.github.io/</id>
   
   <author>
@@ -17,48 +17,6 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://landon298.github.io/2025/05/13/undefined/"/>
-    <id>https://landon298.github.io/2025/05/13/undefined/</id>
-    <published>2025-05-13T12:04:51.079Z</published>
-    <updated>2025-05-13T12:03:57.947Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/npm/katex/dist/katex.min.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/npm/markdown-</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://landon298.github.io/2025/05/13/undefined/"/>
-    <id>https://landon298.github.io/2025/05/13/undefined/</id>
-    <published>2025-05-13T12:03:57.947Z</published>
-    <updated>2025-05-13T12:03:57.947Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/npm/katex/dist/katex.min.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/npm/markdown-</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>DeepSeek官方提示词（下部分）</title>
     <link href="https://landon298.github.io/2025/02/19/undefined/"/>
     <id>https://landon298.github.io/2025/02/19/undefined/</id>
@@ -641,6 +599,70 @@
       
       
     <summary type="html">&lt;h1 id=&quot;%3Cstring.h%3E-%E5%87%BD%E6%95%B0%E4%BB%8B%E7%BB%8D%EF%BC%88%E9%83%A8%E5%88%86%EF%BC%89&quot; tabindex=&quot;-1&quot;&gt;&lt;code&gt;&amp;lt;string.h&amp;gt;&lt;/code&gt;</summary>
+      
+    
+    
+    
+    
+    <category term="AI" scheme="https://landon298.github.io/tags/AI/"/>
+    
+    <category term="CTF" scheme="https://landon298.github.io/tags/CTF/"/>
+    
+    <category term="c" scheme="https://landon298.github.io/tags/c/"/>
+    
+    <category term="c++" scheme="https://landon298.github.io/tags/c/"/>
+    
+    <category term="区块链" scheme="https://landon298.github.io/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    <category term="杂谈" scheme="https://landon298.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>有趣的剪刀、石头、布</title>
+    <link href="https://landon298.github.io/2024/11/29/undefined/"/>
+    <id>https://landon298.github.io/2024/11/29/undefined/</id>
+    <published>2024-11-29T11:42:25.000Z</published>
+    <updated>2025-03-01T11:26:51.690Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="problem-a%3A-%E7%8C%9C%E6%8B%B3%E6%B8%B8%E6%88%8F-(rock%2C-paper%2C-scissors)" tabindex="-1">Problem A: 猜拳游戏 (Rock, Paper, Scissors)</h1><h2 id="%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0" tabindex="-1">题目描述</h2><p>你正在与长途玩石头剪刀布的猜拳游戏。请回忆石头剪刀布的游戏规则：两个人同时伸出手，分别出示石头（用 <code>shitou</code> 表示）、剪刀（用 <code>jiandao</code> 表示）或布（用 <code>bu</code> 表示）的手势。石头胜剪刀，剪刀胜布，布胜石头。如果两个人出示的手势相同，则是平局，需要重新进行游戏。</p><p>在开始游戏之前，长途会告诉你他要出石头、剪刀还是布。然而实际上，长途是在欺骗你。他认为你会相信他的话，并且认为你一定会根据他说的话选择能战胜他的手势（例如，他说他会出石头，他便认为你会出布）。所以最终，长途不会按照他告诉你的手势出拳，而是选择自己所认为一定能战胜你的手势。</p><p>现在你已经看透了他的小心思。请问，在知道他告诉你他要出什么手势的情况下，你应该出什么手势才能取胜？</p><h3 id="%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F" tabindex="-1">输入格式</h3><p>仅输入一行，包含一个字符串，表示长途告诉你他要出的手势。保证字符串一定是 <code>shitou</code>、<code>jiandao</code> 或 <code>bu</code> 中的一个。</p><h3 id="%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F" tabindex="-1">输出格式</h3><p>仅输出一行，包含一个字符串，表示最终你能取胜的手势。输出字母的大小写不限，例如 <code>SHITOU</code>、<code>shitou</code>、<code>sHitoU</code> 都会被认定为石头。</p><h3 id="%E6%B3%A8%E6%84%8F" tabindex="-1">注意</h3><p>本题不提供样例。</p><h2 id="%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0" tabindex="-1">代码实现</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">char</span> gesture[<span class="number">10</span>];</span><br><span class="line">    <span class="comment">// 输入长途告诉我们的手势</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, gesture);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 根据长途告诉的手势选择我们的出拳</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">strcmp</span>(gesture, <span class="string">&quot;shitou&quot;</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;bu&quot;</span>);  <span class="comment">// 长途出石头，我们出布</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">strcmp</span>(gesture, <span class="string">&quot;jiandao&quot;</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;shitou&quot;</span>);  <span class="comment">// 长途出剪刀，我们出石头</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">strcmp</span>(gesture, <span class="string">&quot;bu&quot;</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;jiandao&quot;</span>);  <span class="comment">// 长途出布，我们出剪刀</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90" tabindex="-1">题目分析</h2><h3 id="%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99%EF%BC%9A" tabindex="-1">游戏规则：</h3><ul><li><strong>石头（shitou）</strong> 胜 <strong>剪刀（jiandao）</strong></li><li><strong>剪刀（jiandao）</strong> 胜 <strong>布（bu）</strong></li><li><strong>布（bu）</strong> 胜 <strong>石头（shitou）</strong></li></ul><h3 id="%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%EF%BC%9A" tabindex="-1">解题思路：</h3><ul><li><strong>输入</strong>：长途告诉我们他要出什么手势，输入字符串为 <code>shitou</code>、<code>jiandao</code> 或 <code>bu</code>。</li><li><strong>输出</strong>：根据长途告诉的手势，我们要选择一个能战胜他的手势。<ul><li>如果长途说他出石头（<code>shitou</code>），我们应该出布（<code>bu</code>）。</li><li>如果长途说他出剪刀（<code>jiandao</code>），我们应该出石头（<code>shitou</code>）。</li><li>如果长途说他出布（<code>bu</code>），我们应该出剪刀（<code>jiandao</code>）。</li></ul></li></ul><h3 id="%E5%88%86%E6%9E%90%EF%BC%9A" tabindex="-1">分析：</h3><ul><li>当长途告诉你他出 <code>shitou</code> 时，他认为你一定会出 <code>bu</code>，但是由于你最终能战胜他，所以在他认为你要出 <code>bu</code> 的前提下，他一定会出 <code>jiandao</code>，而你只要还出 <code>shitou</code> 就一定会赢。</li><li>当长途出 <code>jiandao</code> 时，你出 <code>jiandao</code> 就能赢。</li><li>当长途出 <code>bu</code> 时，你出 <code>bu</code> 就能赢。</li></ul><h3 id="%E6%80%BB%E7%BB%93%EF%BC%9A" tabindex="-1">总结：</h3><p>这道题通过简单的条件判断来实现。理解石头剪刀布的基本规则后，通过仔细分析，我们就可以根据长途给出的手势选择正确的出拳方式，最终确保自己能胜利。</p><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;problem-a%3A-%E7%8C%9C%E6%8B%B3%E6%B8%B8%E6%88%8F-(rock%2C-paper%2C-scissors)&quot; tabindex=&quot;-1&quot;&gt;Problem A: 猜拳游戏 (Rock, Paper, Scissors)</summary>
+      
+    
+    
+    
+    
+    <category term="AI" scheme="https://landon298.github.io/tags/AI/"/>
+    
+    <category term="CTF" scheme="https://landon298.github.io/tags/CTF/"/>
+    
+    <category term="c" scheme="https://landon298.github.io/tags/c/"/>
+    
+    <category term="c++" scheme="https://landon298.github.io/tags/c/"/>
+    
+    <category term="区块链" scheme="https://landon298.github.io/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    <category term="杂谈" scheme="https://landon298.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>有趣的剪刀、石头、布</title>
+    <link href="https://landon298.github.io/2024/11/29/undefined/"/>
+    <id>https://landon298.github.io/2024/11/29/undefined/</id>
+    <published>2024-11-29T11:42:25.000Z</published>
+    <updated>2025-03-01T11:26:51.690Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="problem-a%3A-%E7%8C%9C%E6%8B%B3%E6%B8%B8%E6%88%8F-(rock%2C-paper%2C-scissors)" tabindex="-1">Problem A: 猜拳游戏 (Rock, Paper, Scissors)</h1><h2 id="%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0" tabindex="-1">题目描述</h2><p>你正在与长途玩石头剪刀布的猜拳游戏。请回忆石头剪刀布的游戏规则：两个人同时伸出手，分别出示石头（用 <code>shitou</code> 表示）、剪刀（用 <code>jiandao</code> 表示）或布（用 <code>bu</code> 表示）的手势。石头胜剪刀，剪刀胜布，布胜石头。如果两个人出示的手势相同，则是平局，需要重新进行游戏。</p><p>在开始游戏之前，长途会告诉你他要出石头、剪刀还是布。然而实际上，长途是在欺骗你。他认为你会相信他的话，并且认为你一定会根据他说的话选择能战胜他的手势（例如，他说他会出石头，他便认为你会出布）。所以最终，长途不会按照他告诉你的手势出拳，而是选择自己所认为一定能战胜你的手势。</p><p>现在你已经看透了他的小心思。请问，在知道他告诉你他要出什么手势的情况下，你应该出什么手势才能取胜？</p><h3 id="%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F" tabindex="-1">输入格式</h3><p>仅输入一行，包含一个字符串，表示长途告诉你他要出的手势。保证字符串一定是 <code>shitou</code>、<code>jiandao</code> 或 <code>bu</code> 中的一个。</p><h3 id="%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F" tabindex="-1">输出格式</h3><p>仅输出一行，包含一个字符串，表示最终你能取胜的手势。输出字母的大小写不限，例如 <code>SHITOU</code>、<code>shitou</code>、<code>sHitoU</code> 都会被认定为石头。</p><h3 id="%E6%B3%A8%E6%84%8F" tabindex="-1">注意</h3><p>本题不提供样例。</p><h2 id="%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0" tabindex="-1">代码实现</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">char</span> gesture[<span class="number">10</span>];</span><br><span class="line">    <span class="comment">// 输入长途告诉我们的手势</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, gesture);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 根据长途告诉的手势选择我们的出拳</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">strcmp</span>(gesture, <span class="string">&quot;shitou&quot;</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;bu&quot;</span>);  <span class="comment">// 长途出石头，我们出布</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">strcmp</span>(gesture, <span class="string">&quot;jiandao&quot;</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;shitou&quot;</span>);  <span class="comment">// 长途出剪刀，我们出石头</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">strcmp</span>(gesture, <span class="string">&quot;bu&quot;</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;jiandao&quot;</span>);  <span class="comment">// 长途出布，我们出剪刀</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90" tabindex="-1">题目分析</h2><h3 id="%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99%EF%BC%9A" tabindex="-1">游戏规则：</h3><ul><li><strong>石头（shitou）</strong> 胜 <strong>剪刀（jiandao）</strong></li><li><strong>剪刀（jiandao）</strong> 胜 <strong>布（bu）</strong></li><li><strong>布（bu）</strong> 胜 <strong>石头（shitou）</strong></li></ul><h3 id="%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%EF%BC%9A" tabindex="-1">解题思路：</h3><ul><li><strong>输入</strong>：长途告诉我们他要出什么手势，输入字符串为 <code>shitou</code>、<code>jiandao</code> 或 <code>bu</code>。</li><li><strong>输出</strong>：根据长途告诉的手势，我们要选择一个能战胜他的手势。<ul><li>如果长途说他出石头（<code>shitou</code>），我们应该出布（<code>bu</code>）。</li><li>如果长途说他出剪刀（<code>jiandao</code>），我们应该出石头（<code>shitou</code>）。</li><li>如果长途说他出布（<code>bu</code>），我们应该出剪刀（<code>jiandao</code>）。</li></ul></li></ul><h3 id="%E5%88%86%E6%9E%90%EF%BC%9A" tabindex="-1">分析：</h3><ul><li>当长途告诉你他出 <code>shitou</code> 时，他认为你一定会出 <code>bu</code>，但是由于你最终能战胜他，所以在他认为你要出 <code>bu</code> 的前提下，他一定会出 <code>jiandao</code>，而你只要还出 <code>shitou</code> 就一定会赢。</li><li>当长途出 <code>jiandao</code> 时，你出 <code>jiandao</code> 就能赢。</li><li>当长途出 <code>bu</code> 时，你出 <code>bu</code> 就能赢。</li></ul><h3 id="%E6%80%BB%E7%BB%93%EF%BC%9A" tabindex="-1">总结：</h3><p>这道题通过简单的条件判断来实现。理解石头剪刀布的基本规则后，通过仔细分析，我们就可以根据长途给出的手势选择正确的出拳方式，最终确保自己能胜利。</p><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;problem-a%3A-%E7%8C%9C%E6%8B%B3%E6%B8%B8%E6%88%8F-(rock%2C-paper%2C-scissors)&quot; tabindex=&quot;-1&quot;&gt;Problem A: 猜拳游戏 (Rock, Paper, Scissors)</summary>
       
     
     
