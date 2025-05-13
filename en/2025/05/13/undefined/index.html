@@ -17,7 +17,7 @@
   <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_0khxww3tj3q9';window.REIMU_CONFIG.clipboard_tips = {"success":{"en":"Copy successfully (*^▽^*)","zh-CN":"复制成功 (*^▽^*)","zh-TW":"複製成功 (*^▽^*)","ja":"コピー成功 (*^▽^*)"},"fail":{"en":"Copy failed (ﾟ⊿ﾟ)ﾂ","zh-CN":"复制失败 (ﾟ⊿ﾟ)ﾂ","zh-TW":"複製失敗 (ﾟ⊿ﾟ)ﾂ","ja":"コピー失敗 (ﾟ⊿ﾟ)ﾂ"},"copyright":{"enable":true,"count":50,"license_type":"by-nc-sa"}};window.REIMU_CONFIG.clipboard_tips.copyright.content = 'All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!';window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://Landon298.github.io';window.REIMU_CONFIG.i18n_languages = ["en"];</script>
   
   <title>
-    免费生成代码：VsCode+DeepSeek结合实现 |
+    CTF-Buuctf每日打卡wp |
     
     Landon298 Blog
   </title>
@@ -35,21 +35,28 @@
 
   
   
-    <meta name="description" content="前言 结合上一篇博客所讲的内容，这篇博客主要介绍如何将VsCode与DeepSeek结合，从而实现直接免费生成代码的目的。 下载并安装Vscode 建议直接从官网下载并安装Vscode,  下载插件 下载安装完后，你需要在旁边扩展下载一个插件以至于你能更方便的使用Vscode：Chinese(Simplified)(简体中文)Language  然后进入下载今天的主角插件：continue  注意">
+    <meta name="description" content="前言 不参加ctf比赛真的是不知道自己是有多么的菜，更严重的是之前做过的题由于没有总结归纳导致再次碰到同样类型的题仍然还是不会，可见总结归纳是多么重要。因此，作为一名ctf萌新，我决定改掉这种不好的习惯，每次做题后都要写下该题的wp,痛改前非，接下来让我们一起进步吧。 1.old-fashion 题目信息  类别： Crypto 题目描述：  注意：得到的 flag 请包上 flag{} 提交 附">
 <meta property="og:type" content="article">
-<meta property="og:title" content="免费生成代码：VsCode+DeepSeek结合实现">
-<meta property="og:url" content="https://landon298.github.io/en/2025/02/08/undefined/">
+<meta property="og:title" content="CTF-Buuctf每日打卡wp">
+<meta property="og:url" content="https://landon298.github.io/en/2025/05/13/undefined/">
 <meta property="og:site_name" content="Landon298 Blog">
-<meta property="og:description" content="前言 结合上一篇博客所讲的内容，这篇博客主要介绍如何将VsCode与DeepSeek结合，从而实现直接免费生成代码的目的。 下载并安装Vscode 建议直接从官网下载并安装Vscode,  下载插件 下载安装完后，你需要在旁边扩展下载一个插件以至于你能更方便的使用Vscode：Chinese(Simplified)(简体中文)Language  然后进入下载今天的主角插件：continue  注意">
+<meta property="og:description" content="前言 不参加ctf比赛真的是不知道自己是有多么的菜，更严重的是之前做过的题由于没有总结归纳导致再次碰到同样类型的题仍然还是不会，可见总结归纳是多么重要。因此，作为一名ctf萌新，我决定改掉这种不好的习惯，每次做题后都要写下该题的wp,痛改前非，接下来让我们一起进步吧。 1.old-fashion 题目信息  类别： Crypto 题目描述：  注意：得到的 flag 请包上 flag{} 提交 附">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250208164348724.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250208164853475.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250208165045567.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250208170023213.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250208170046037.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250208170505204.png">
-<meta property="article:published_time" content="2025-02-08T08:01:57.000Z">
-<meta property="article:modified_time" content="2025-03-01T11:26:51.690Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513210221666.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513210724473.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513211448228.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513211748747.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513212257519.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513213147129.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513213729714.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214102497.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214400348.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214439348.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214558361.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214808817.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214917252.png">
+<meta property="article:published_time" content="2025-05-13T12:29:45.000Z">
+<meta property="article:modified_time" content="2025-05-13T13:51:02.988Z">
 <meta property="article:author" content="Landon298">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="CTF">
@@ -58,7 +65,7 @@
 <meta property="article:tag" content="区块链">
 <meta property="article:tag" content="杂谈">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250208164348724.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513210221666.png">
   
   
     <link rel="alternate" href="/atom.xml" title="Landon298 Blog" type="application/atom+xml">
@@ -212,9 +219,9 @@
           item.addEventListener("click", () => {
             const langMap = {};
             
-              langMap['zh-CN'] = '/2025/02/08/undefined/';
+              langMap['zh-CN'] = '/2025/05/13/undefined/';
             
-              langMap['en'] = '/en/2025/02/08/undefined/';
+              langMap['en'] = '/en/2025/05/13/undefined/';
             
             selectedLang.textContent = item.textContent;
             selectItems.classList.remove("show");
@@ -238,7 +245,7 @@
 <header id="header">
   
     <picture></picture>
-    <img  fetchpriority="high" src="https://i.111666.best/image/iI6QBaOSDmi7ywvQ1pf2z0.jpg" alt="免费生成代码：VsCode+DeepSeek结合实现">
+    <img  fetchpriority="high" src="https://i.111666.best/image/iI6QBaOSDmi7ywvQ1pf2z0.jpg" alt="CTF-Buuctf每日打卡wp">
   
   <div id="header-outer">
     <div id="header-title">
@@ -246,7 +253,7 @@
         
         
           <a href="/" id="logo">
-            <h1 data-aos="slide-up">免费生成代码：VsCode+DeepSeek结合实现</h1>
+            <h1 data-aos="slide-up">CTF-Buuctf每日打卡wp</h1>
           </a>
         
       
@@ -273,7 +280,7 @@
   <h3 class="toc-title">Contents</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%B9%B6%E5%AE%89%E8%A3%85vscode"><span class="toc-number">1.1.</span> <span class="toc-text">下载并安装Vscode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E6%8F%92%E4%BB%B6"><span class="toc-number">1.2.</span> <span class="toc-text">下载插件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">1.2.1.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8continue"><span class="toc-number">1.3.</span> <span class="toc-text">使用continue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E5%B0%9D%E8%AF%95"><span class="toc-number">1.4.</span> <span class="toc-text">简单尝试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.5.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1.old-fashion"><span class="toc-number">2.</span> <span class="toc-text">1.old-fashion</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF"><span class="toc-number">2.1.</span> <span class="toc-text">题目信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">2.2.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2.%5Bafctf2018%5Dmorse"><span class="toc-number">3.</span> <span class="toc-text">2.[AFCTF2018]Morse</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-1"><span class="toc-number">3.1.</span> <span class="toc-text">题目信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-1"><span class="toc-number">3.2.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3.%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99"><span class="toc-number">4.</span> <span class="toc-text">3.隐藏的钥匙</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-2"><span class="toc-number">4.1.</span> <span class="toc-text">题目信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-2"><span class="toc-number">4.2.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4.%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C"><span class="toc-number">5.</span> <span class="toc-text">4.另外一个世界</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-3"><span class="toc-number">5.1.</span> <span class="toc-text">题目信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-3"><span class="toc-number">5.2.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4.%5B%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019%5Dsecret-file"><span class="toc-number">6.</span> <span class="toc-text">4.[极客大挑战 2019]Secret File</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-4"><span class="toc-number">6.1.</span> <span class="toc-text">题目信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-4"><span class="toc-number">6.2.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li></ol>
       
   </div>
 </div>
@@ -357,13 +364,13 @@
   
 </aside>
 
-          <section id="main"><article id="post-免费生成代码：VsCode-DeepSeek结合实现" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+          <section id="main"><article id="post-CTF-buuctf每日打卡wp" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-inner" data-aos="fade-up">
     <div class="article-meta">
       <div class="article-date">
   <span class="article-date-link" data-aos="zoom-in">
-    <time datetime="2025-02-08T08:01:57.000Z" itemprop="datePublished">2025-02-08</time>
-    <time style="display: none;" id="post-update-time">2025-03-01</time>
+    <time datetime="2025-05-13T12:29:45.000Z" itemprop="datePublished">2025-05-13</time>
+    <time style="display: none;" id="post-update-time">2025-05-13</time>
   </span>
 </div>
 
@@ -377,29 +384,79 @@
       
       
         <h2 id="%E5%89%8D%E8%A8%80" tabindex="-1">前言</h2>
-<p>结合上一篇博客所讲的内容，这篇博客主要介绍如何将VsCode与DeepSeek结合，从而实现直接免费生成代码的目的。</p>
-<h3 id="%E4%B8%8B%E8%BD%BD%E5%B9%B6%E5%AE%89%E8%A3%85vscode" tabindex="-1">下载并安装Vscode</h3>
-<p>建议直接从官网下载并安装<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">Vscode</a>,<br>
-<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250208164348724.png" alt="屏幕截图 2025-02-08 161036"></p>
-<h3 id="%E4%B8%8B%E8%BD%BD%E6%8F%92%E4%BB%B6" tabindex="-1">下载插件</h3>
-<p>下载安装完后，你需要在旁边扩展下载一个插件以至于你能更方便的使用Vscode：Chinese(Simplified)(简体中文)Language<br>
-<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250208164853475.png" alt="屏幕截图 2025-02-08 164830"><br>
-然后进入下载今天的主角插件：continue<br>
-<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250208165045567.png" alt="屏幕截图 2025-02-08 165034"></p>
-<h4 id="%E6%B3%A8%E6%84%8F" tabindex="-1">注意</h4>
-<ol>
-<li>如果你此前使用过其他ai生成代码的插件，需要先停用他们，否则会报错。</li>
-<li>安装完成后，关闭并重启VSCode，此时你会在右侧菜单栏最下方看到类似圆形的 continue 的图标。</li>
-</ol>
-<h3 id="%E4%BD%BF%E7%94%A8continue" tabindex="-1">使用continue</h3>
-<p>首先点击下面continue的图标，然后点击Add Chat model,然后在Provider中选择Ollama,在Model中选择Autodetect,（电脑会自动检测电脑上的模型）然后点击Connect就行了。这时候你就可以用DeepSeek去生成代码以及其他的东西了。<br>
-<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250208170023213.png" alt="屏幕截图 2025-02-08 165954"><br>
-<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250208170046037.png" alt="屏幕截图 2025-02-08 170001"></p>
-<h3 id="%E7%AE%80%E5%8D%95%E5%B0%9D%E8%AF%95" tabindex="-1">简单尝试</h3>
-<p>首先创建一个文件，然后在聊天框中输入问题，最后点击代码框中的Apply按钮，就可以直接在你所创建的文件中生成代码了。<br>
-<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250208170505204.png" alt="屏幕截图 2025-02-08 170454"></p>
-<h3 id="%E6%80%BB%E7%BB%93" tabindex="-1">总结</h3>
-<p>通过VsCode与DeepSeek结合可以直接免费生成代码，这对于一些需要大量代码的项目来说非常方便。bye！</p>
+<p>不参加ctf比赛真的是不知道自己是有多么的菜，更严重的是之前做过的题由于没有总结归纳导致再次碰到同样类型的题仍然还是不会，可见总结归纳是多么重要。因此，作为一名ctf萌新，我决定改掉这种不好的习惯，每次做题后都要写下该题的wp,痛改前非，接下来让我们一起进步吧。</p>
+<h2 id="1.old-fashion" tabindex="-1">1.old-fashion</h2>
+<h3 id="%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF" tabindex="-1">题目信息</h3>
+<ul>
+<li><strong>类别：</strong> Crypto</li>
+<li><strong>题目描述：</strong>  注意：得到的 flag 请包上 flag{} 提交</li>
+<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="https://files.buuoj.cn/files/ea2431d5c3f2421da0ea46f8346163b0/ec8bd2cf-5fa6-4fed-9d8f-f820bae6cfd6.zip">ec8bd2cf-5fa6-4fed-9d8f-f820bae6cfd6.zip</a></li>
+</ul>
+<hr>
+<h3 id="%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A" tabindex="-1">解题思路、步骤：</h3>
+<p>首先下载附件，解压打开后出现题目.txt文件，打开后内容出现：<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513210221666.png" alt="屏幕截图 2025-05-13 210154"><br>
+观察后发现后面的f1_2jyf-k3_jg1-vb-vl_l应该是flag，于是采用凯撒进行枚举，没有发现flag，然后想到 <a target="_blank" rel="noopener" href="https://quipqiup.com/">https://quipqiup.com/</a> 网站(一个快速且自动化的密码求解器)，观察可知dsln应该是flag，所以在Clues这一栏中填写dsln=flag，然后点击solve，即可得到flag。<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513210724473.png" alt="屏幕截图 2025-05-12 231715"></p>
+<h2 id="2.%5Bafctf2018%5Dmorse" tabindex="-1">2.[AFCTF2018]Morse</h2>
+<h3 id="%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-1" tabindex="-1">题目信息</h3>
+<ul>
+<li><strong>类别：</strong> Crypto</li>
+<li><strong>题目描述：</strong>  得到的 flag 请包上 flag{} 提交。</li>
+<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="https://files.buuoj.cn/files/12ecb33066d2043f31daf11b2812edfe/attachment.txt">attachment.txt</a></li>
+</ul>
+<hr>
+<h3 id="%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-1" tabindex="-1">解题思路、步骤：</h3>
+<p>首先下载附件，打开后出现一段密码，立即知道是摩斯密码<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513211448228.png" alt="屏幕截图 2025-05-13 211429"><br>
+于是打开随波逐流软件，选择摩斯密码解密，得到一串密码<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513211748747.png" alt="屏幕截图 2025-05-13 211727"><br>
+根据形式可以知道，应该是base x编码，于是直接一键解码，得到flag。<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513212257519.png" alt="屏幕截图 2025-05-12 231730"></p>
+<h2 id="3.%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99" tabindex="-1">3.隐藏的钥匙</h2>
+<h3 id="%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-2" tabindex="-1">题目信息</h3>
+<ul>
+<li><strong>类别：</strong> Misc</li>
+<li><strong>题目描述：</strong>  路飞一行人千辛万苦来到了伟大航道的终点，找到了传说中的One piece，但是需要钥匙才能打开One Piece大门，钥匙就隐藏在下面的图片中，聪明的你能帮路飞拿到钥匙，打开One Piece的大门吗？ 注意：得到的 flag 请包上 flag{} 提交</li>
+<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="https://files.buuoj.cn/files/c1c5ee5cee98ab7aa11236b1422c7476/8f6577ab-4019-4e61-aeec-a6d4fa492994.zip">8f6577ab-4019-4e61-aeec-a6d4fa492994.zip</a></li>
+</ul>
+<hr>
+<h3 id="%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-2" tabindex="-1">解题思路、步骤：</h3>
+<p>首先下载附件，解压后出现一张.jpg照片，照片标题为“隐藏的钥匙”，根据之前做图像类Misc的习惯，放到winhex中查看，并且直接ctrl+f搜索flag，发现flag在右边<br>
+图 2025-05-12 231912](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513212746506.png">https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513212746506.png</a>)<br>
+根据提示直接用base64解码即可得到flag。（但是如果选择一键解码，则会得不到flag）<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513213147129.png" alt="屏幕截图 2025-05-13 213132"></p>
+<h2 id="4.%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C" tabindex="-1">4.另外一个世界</h2>
+<h3 id="%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-3" tabindex="-1">题目信息</h3>
+<ul>
+<li><strong>类别：</strong> Misc</li>
+<li><strong>题目描述：</strong>  注意：得到的 flag 请包上 flag{} 提交</li>
+<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="https://files.buuoj.cn/files/c95169c7b458ffd8ea0c5a72f6575ce3/31c48bab-cf07-4588-bc34-bd677811cf20.zip">31c48bab-cf07-4588-bc34-bd677811cf20.zip</a></li>
+</ul>
+<hr>
+<h3 id="%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-3" tabindex="-1">解题思路、步骤：</h3>
+<p>首先下载附件，解压后出现一张.jpg文件，直接放到winhex中查看，查找flag发现没有，然后观察开头和结尾，发现结尾处有一串二进制密码<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513213729714.png" alt="屏幕截图 2025-05-13 213721"><br>
+然后在浏览器搜索二进制转字符串在线工具，把原码放进去即可得到flag。<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214102497.png" alt="屏幕截图 2025-05-13 214003"></p>
+<h2 id="4.%5B%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019%5Dsecret-file" tabindex="-1">4.[极客大挑战 2019]Secret File</h2>
+<h3 id="%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-4" tabindex="-1">题目信息</h3>
+<ul>
+<li><strong>类别：</strong> Web</li>
+<li><strong>题目描述：</strong>  无</li>
+</ul>
+<hr>
+<h3 id="%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-4" tabindex="-1">解题思路、步骤：</h3>
+<p>启动靶机，发现是一个网站，直接ctrl+u查看源代码，发现里面有一个./Archive_room.php文件，于是直接打开<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214400348.png" alt="屏幕截图 2025-05-12 235239"><br>
+直接点击SECRET，页面如下<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214439348.png" alt="屏幕截图 2025-05-12 235244"><br>
+尝试几次后，想到应该是有一个网页闪过去了，于是直接抓包，打开bp,开始抓包<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214558361.png" alt="屏幕截图 2025-05-12 235636"><br>
+最终在Response中发现了一个注释掉的一个文件，然后直接在靶机上打开，发现出现了一堆代码，但是没有flag信息，于是这时候解酒药想到代码审计<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214808817.png" alt="屏幕截图 2025-05-13 000157"><br>
+这时候出现了一串base64的编码，直接放到工具中解码，然后可得到flag。<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214917252.png" alt="屏幕截图 2025-05-13 000234"></p>
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
 
@@ -409,7 +466,7 @@
       
         <blockquote class="article-copyright">
     <p><strong><span class="icon-user icon"></span>Author: </strong>Landon298 @ Landon298 Blog</p>
-    <p><strong><span class="icon-link icon"></span>Permalink: </strong><a href="https://landon298.github.io/en/2025/02/08/undefined/">https://landon298.github.io/en/2025/02/08/undefined/</a></p>
+    <p><strong><span class="icon-link icon"></span>Permalink: </strong><a href="https://landon298.github.io/en/2025/05/13/undefined/">https://landon298.github.io/en/2025/05/13/undefined/</a></p>
     
     
     
@@ -449,43 +506,43 @@
       
         <div class="share-wrapper">
   
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flandon298.github.io%2F2025%2F02%2F08%2Fundefined%2F" target="_blank" rel="noopener noreferrer" title="免费生成代码：VsCode+DeepSeek结合实现">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flandon298.github.io%2F2025%2F05%2F13%2Fundefined%2F" target="_blank" rel="noopener noreferrer" title="CTF-Buuctf每日打卡wp">
       <div class="share-icon icon icon-facebook">
         
       </div>
     </a>
   
-    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Flandon298.github.io%2F2025%2F02%2F08%2Fundefined%2F&amp;text=%E5%85%8D%E8%B4%B9%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%EF%BC%9AVsCode%2BDeepSeek%E7%BB%93%E5%90%88%E5%AE%9E%E7%8E%B0&amp;via=https%3A%2F%2FLandon298.github.io" target="_blank" rel="noopener noreferrer" title="免费生成代码：VsCode+DeepSeek结合实现">
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Flandon298.github.io%2F2025%2F05%2F13%2Fundefined%2F&amp;text=CTF-Buuctf%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1wp&amp;via=https%3A%2F%2FLandon298.github.io" target="_blank" rel="noopener noreferrer" title="CTF-Buuctf每日打卡wp">
       <div class="share-icon icon icon-twitter">
         
       </div>
     </a>
   
-    <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Flandon298.github.io%2F2025%2F02%2F08%2Fundefined%2F&amp;title=%E5%85%8D%E8%B4%B9%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%EF%BC%9AVsCode%2BDeepSeek%E7%BB%93%E5%90%88%E5%AE%9E%E7%8E%B0&amp;summary=%E5%85%8D%E8%B4%B9%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%EF%BC%9AVsCode%2BDeepSeek%E7%BB%93%E5%90%88%E5%AE%9E%E7%8E%B0&amp;mini=true&amp;ro=true" target="_blank" rel="noopener noreferrer" title="免费生成代码：VsCode+DeepSeek结合实现">
+    <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Flandon298.github.io%2F2025%2F05%2F13%2Fundefined%2F&amp;title=CTF-Buuctf%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1wp&amp;summary=CTF-Buuctf%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1wp&amp;mini=true&amp;ro=true" target="_blank" rel="noopener noreferrer" title="CTF-Buuctf每日打卡wp">
       <div class="share-icon icon icon-linkedin">
         
       </div>
     </a>
   
-    <a href="https://www.reddit.com/submit?url=https%3A%2F%2Flandon298.github.io%2F2025%2F02%2F08%2Fundefined%2F&amp;title=%E5%85%8D%E8%B4%B9%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%EF%BC%9AVsCode%2BDeepSeek%E7%BB%93%E5%90%88%E5%AE%9E%E7%8E%B0" target="_blank" rel="noopener noreferrer" title="免费生成代码：VsCode+DeepSeek结合实现">
+    <a href="https://www.reddit.com/submit?url=https%3A%2F%2Flandon298.github.io%2F2025%2F05%2F13%2Fundefined%2F&amp;title=CTF-Buuctf%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1wp" target="_blank" rel="noopener noreferrer" title="CTF-Buuctf每日打卡wp">
       <div class="share-icon icon icon-reddit">
         
       </div>
     </a>
   
-    <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Flandon298.github.io%2F2025%2F02%2F08%2Fundefined%2F&amp;appkey=&amp;title=%E5%85%8D%E8%B4%B9%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%EF%BC%9AVsCode%2BDeepSeek%E7%BB%93%E5%90%88%E5%AE%9E%E7%8E%B0&amp;pic=&amp;ralateUid=" target="_blank" rel="noopener noreferrer" title="免费生成代码：VsCode+DeepSeek结合实现">
+    <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Flandon298.github.io%2F2025%2F05%2F13%2Fundefined%2F&amp;appkey=&amp;title=CTF-Buuctf%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1wp&amp;pic=&amp;ralateUid=" target="_blank" rel="noopener noreferrer" title="CTF-Buuctf每日打卡wp">
       <div class="share-icon icon icon-weibo">
         
       </div>
     </a>
   
-    <a href="https://connect.qq.com/widget/shareqq/index.html?url=www.baidu.com&amp;title=%E5%85%8D%E8%B4%B9%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%EF%BC%9AVsCode%2BDeepSeek%E7%BB%93%E5%90%88%E5%AE%9E%E7%8E%B0&amp;desc=%E5%85%8D%E8%B4%B9%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%EF%BC%9AVsCode%2BDeepSeek%E7%BB%93%E5%90%88%E5%AE%9E%E7%8E%B0&amp;source=https%3A%2F%2FLandon298.github.io" target="_blank" rel="noopener noreferrer" title="免费生成代码：VsCode+DeepSeek结合实现">
+    <a href="https://connect.qq.com/widget/shareqq/index.html?url=www.baidu.com&amp;title=CTF-Buuctf%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1wp&amp;desc=CTF-Buuctf%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1wp&amp;source=https%3A%2F%2FLandon298.github.io" target="_blank" rel="noopener noreferrer" title="CTF-Buuctf每日打卡wp">
       <div class="share-icon icon icon-qq">
         
       </div>
     </a>
   
-    <a href="javascript:;"  title="免费生成代码：VsCode+DeepSeek结合实现">
+    <a href="javascript:;"  title="CTF-Buuctf每日打卡wp">
       <div class="share-icon icon icon-weixin">
         
           <div id="share-weixin">
@@ -512,15 +569,15 @@
 </div>
       
       
-        <a data-aos="zoom-in" href="/en/2025/02/08/undefined/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/en/2025/02/08/undefined/" itemprop="commentCount"></span>
+        <a data-aos="zoom-in" href="/en/2025/05/13/undefined/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/en/2025/05/13/undefined/" itemprop="commentCount"></span>
           Comments
         </a>
       
       
       
       
-        <span data-aos="zoom-in" id="/en/2025/02/08/undefined/" class="leancloud_visitors article-visitor-link" data-flag-title="免费生成代码：VsCode+DeepSeek结合实现">
+        <span data-aos="zoom-in" id="/en/2025/05/13/undefined/" class="leancloud_visitors article-visitor-link" data-flag-title="CTF-Buuctf每日打卡wp">
           <span class="leancloud-visitors-count">0</span>
           <em class="post-meta-item-text">Readings</em>
         </span>
@@ -535,31 +592,17 @@
   
   <nav id="article-nav" data-aos="fade-up">
     
-      
-      <div class="article-nav-link-wrap article-nav-link-left">
-        
-          <img data-src="https://i.111666.best/image/iI6QBaOSDmi7ywvQ1pf2z0.jpg" data-sizes="auto" alt="DeepSeek官方提示词（上部分）" class="lazyload">
-        
-        <a href="/en/2025/02/18/undefined/"></a>
-        <div class="article-nav-caption">Newer</div>
-        <h3 class="article-nav-title">
-          
-            DeepSeek官方提示词（上部分）
-          
-        </h3>
-      </div>
-    
     
     
     <div class="article-nav-link-wrap article-nav-link-right">
       
-        <img data-src="https://i.111666.best/image/iI6QBaOSDmi7ywvQ1pf2z0.jpg" data-sizes="auto" alt="手把手教你DeepSeek本地部署" class="lazyload">
+        <img data-src="https://i.111666.best/image/iI6QBaOSDmi7ywvQ1pf2z0.jpg" data-sizes="auto" alt="DeepSeek官方提示词（下部分）" class="lazyload">
       
-      <a href="/en/2025/02/02/undefined/"></a>
+      <a href="/en/2025/02/19/undefined/"></a>
       <div class="article-nav-caption">Older</div>
       <h3 class="article-nav-title">
         
-          手把手教你DeepSeek本地部署
+          DeepSeek官方提示词（下部分）
         
       </h3>
     </div>
@@ -667,7 +710,7 @@
   <h3 class="toc-title">Contents</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%B9%B6%E5%AE%89%E8%A3%85vscode"><span class="toc-number">1.1.</span> <span class="toc-text">下载并安装Vscode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E6%8F%92%E4%BB%B6"><span class="toc-number">1.2.</span> <span class="toc-text">下载插件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">1.2.1.</span> <span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8continue"><span class="toc-number">1.3.</span> <span class="toc-text">使用continue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E5%B0%9D%E8%AF%95"><span class="toc-number">1.4.</span> <span class="toc-text">简单尝试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.5.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1.old-fashion"><span class="toc-number">2.</span> <span class="toc-text">1.old-fashion</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF"><span class="toc-number">2.1.</span> <span class="toc-text">题目信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">2.2.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2.%5Bafctf2018%5Dmorse"><span class="toc-number">3.</span> <span class="toc-text">2.[AFCTF2018]Morse</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-1"><span class="toc-number">3.1.</span> <span class="toc-text">题目信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-1"><span class="toc-number">3.2.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3.%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99"><span class="toc-number">4.</span> <span class="toc-text">3.隐藏的钥匙</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-2"><span class="toc-number">4.1.</span> <span class="toc-text">题目信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-2"><span class="toc-number">4.2.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4.%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C"><span class="toc-number">5.</span> <span class="toc-text">4.另外一个世界</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-3"><span class="toc-number">5.1.</span> <span class="toc-text">题目信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-3"><span class="toc-number">5.2.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4.%5B%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019%5Dsecret-file"><span class="toc-number">6.</span> <span class="toc-text">4.[极客大挑战 2019]Secret File</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-4"><span class="toc-number">6.1.</span> <span class="toc-text">题目信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-4"><span class="toc-number">6.2.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li></ol>
       
   </div>
 </div>
@@ -960,13 +1003,13 @@
       <script data-pjax>
         window.REIMU_POST = {
           author: "Landon298",
-          title: "免费生成代码：VsCode+DeepSeek结合实现",
-          url: "https://landon298.github.io/2025/02/08/undefined/",
+          title: "CTF-Buuctf每日打卡wp",
+          url: "https://landon298.github.io/2025/05/13/undefined/",
           excerpt: "",
           description: "",
-          stripContent: "前言 结合上一篇博客所讲的内容，这篇博客主要介绍如何将VsCode与DeepSeek结合，从而实现直接免费生成代码的目的。 下载并安装Vscode 建议直接从官网下载并安装Vscode,  下载插件 下载安装完后，你需要在旁边扩展下载一个插件以至于你能更方便的使用Vscode：Chinese(Simplified)(简体中文)Language  然后进入下载今天的主角插件：continue  注意  如果你此前使用过其他ai生成代码的插件，需要先停用他们，否则会报错。 安装完成后，关闭并重启VS",
-          date: "Sat Feb 08 2025 16:01:57 GMT+0800",
-          updated: "Sat Mar 01 2025 19:26:51 GMT+0800",
+          stripContent: "前言 不参加ctf比赛真的是不知道自己是有多么的菜，更严重的是之前做过的题由于没有总结归纳导致再次碰到同样类型的题仍然还是不会，可见总结归纳是多么重要。因此，作为一名ctf萌新，我决定改掉这种不好的习惯，每次做题后都要写下该题的wp,痛改前非，接下来让我们一起进步吧。 1.old-fashion 题目信息  类别： Crypto 题目描述：  注意：得到的 flag 请包上 flag{} 提交 附件下载： ec8bd2cf-5fa6-4fed-9d8f-f820bae6cfd6.zip   解题",
+          date: "Tue May 13 2025 20:29:45 GMT+0800",
+          updated: "Tue May 13 2025 21:51:02 GMT+0800",
           cover: "https://i.111666.best/image/iI6QBaOSDmi7ywvQ1pf2z0.jpg",
         };
       </script>
