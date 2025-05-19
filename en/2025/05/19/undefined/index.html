@@ -17,7 +17,7 @@
   <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_0khxww3tj3q9';window.REIMU_CONFIG.clipboard_tips = {"success":{"en":"Copy successfully (*^▽^*)","zh-CN":"复制成功 (*^▽^*)","zh-TW":"複製成功 (*^▽^*)","ja":"コピー成功 (*^▽^*)"},"fail":{"en":"Copy failed (ﾟ⊿ﾟ)ﾂ","zh-CN":"复制失败 (ﾟ⊿ﾟ)ﾂ","zh-TW":"複製失敗 (ﾟ⊿ﾟ)ﾂ","ja":"コピー失敗 (ﾟ⊿ﾟ)ﾂ"},"copyright":{"enable":true,"count":50,"license_type":"by-nc-sa"}};window.REIMU_CONFIG.clipboard_tips.copyright.content = 'All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!';window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://Landon298.github.io';window.REIMU_CONFIG.i18n_languages = ["en"];</script>
   
   <title>
-    CTF-Buuctf每日打卡wp 1 |
+    CTF-Buuctf每日打卡wp 2 |
     
     Landon298 Blog
   </title>
@@ -35,29 +35,26 @@
 
   
   
-    <meta name="description" content="前言 不参加ctf比赛真的是不知道自己是有多么的菜，更严重的是之前做过的题由于没有总结归纳导致再次碰到同样类型的题仍然还是不会，可见总结归纳是多么重要。因此，作为一名ctf萌新，我决定改掉这种不好的习惯，每次做题后都要写下该题的wp,痛改前非，接下来让我们一起进步吧。 1.old-fashion 题目信息  类别： Crypto 题目描述：  注意：得到的 flag 请包上 flag{} 提交 附">
+    <meta name="description" content="前言 话不多说，直接开始，今天主要是讲解Crypto类之中的RSA的题目，涉及大量python脚本,需要用到pycharm等软件。 注： 符号	               含义 p, q	               两个大素数 n &#x3D; p * q	模数 φ(n) &#x3D; (p-1)(q-1)	   欧拉函数 e	                   公钥指数（一般选 65537） d">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CTF-Buuctf每日打卡wp 1">
-<meta property="og:url" content="https://landon298.github.io/en/2025/05/13/undefined/">
+<meta property="og:title" content="CTF-Buuctf每日打卡wp 2">
+<meta property="og:url" content="https://landon298.github.io/en/2025/05/19/undefined/">
 <meta property="og:site_name" content="Landon298 Blog">
-<meta property="og:description" content="前言 不参加ctf比赛真的是不知道自己是有多么的菜，更严重的是之前做过的题由于没有总结归纳导致再次碰到同样类型的题仍然还是不会，可见总结归纳是多么重要。因此，作为一名ctf萌新，我决定改掉这种不好的习惯，每次做题后都要写下该题的wp,痛改前非，接下来让我们一起进步吧。 1.old-fashion 题目信息  类别： Crypto 题目描述：  注意：得到的 flag 请包上 flag{} 提交 附">
+<meta property="og:description" content="前言 话不多说，直接开始，今天主要是讲解Crypto类之中的RSA的题目，涉及大量python脚本,需要用到pycharm等软件。 注： 符号	               含义 p, q	               两个大素数 n &#x3D; p * q	模数 φ(n) &#x3D; (p-1)(q-1)	   欧拉函数 e	                   公钥指数（一般选 65537） d">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513210221666.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513210724473.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513211448228.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513211748747.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513212257519.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513212746506.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513213147129.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513213729714.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214102497.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214400348.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214439348.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214558361.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214808817.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214917252.png">
-<meta property="article:published_time" content="2025-05-13T12:29:45.000Z">
-<meta property="article:modified_time" content="2025-05-14T14:08:06.506Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519195935848.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519200433055.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519200735915.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519202109371.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519202644671.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519203510429.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519204023963.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519204431480.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519204626605.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519205747917.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519205747917.png">
+<meta property="article:published_time" content="2025-05-19T11:51:28.000Z">
+<meta property="article:modified_time" content="2025-05-19T13:12:43.254Z">
 <meta property="article:author" content="Landon298">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="CTF">
@@ -66,7 +63,7 @@
 <meta property="article:tag" content="区块链">
 <meta property="article:tag" content="杂谈">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513210221666.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519195935848.png">
   
   
     <link rel="alternate" href="/atom.xml" title="Landon298 Blog" type="application/atom+xml">
@@ -220,9 +217,9 @@
           item.addEventListener("click", () => {
             const langMap = {};
             
-              langMap['zh-CN'] = '/2025/05/13/undefined/';
+              langMap['zh-CN'] = '/2025/05/19/undefined/';
             
-              langMap['en'] = '/en/2025/05/13/undefined/';
+              langMap['en'] = '/en/2025/05/19/undefined/';
             
             selectedLang.textContent = item.textContent;
             selectItems.classList.remove("show");
@@ -246,7 +243,7 @@
 <header id="header">
   
     <picture></picture>
-    <img  fetchpriority="high" src="https://i.111666.best/image/iI6QBaOSDmi7ywvQ1pf2z0.jpg" alt="CTF-Buuctf每日打卡wp 1">
+    <img  fetchpriority="high" src="https://i.111666.best/image/iI6QBaOSDmi7ywvQ1pf2z0.jpg" alt="CTF-Buuctf每日打卡wp 2">
   
   <div id="header-outer">
     <div id="header-title">
@@ -254,7 +251,7 @@
         
         
           <a href="/" id="logo">
-            <h1 data-aos="slide-up">CTF-Buuctf每日打卡wp 1</h1>
+            <h1 data-aos="slide-up">CTF-Buuctf每日打卡wp 2</h1>
           </a>
         
       
@@ -281,7 +278,7 @@
   <h3 class="toc-title">Contents</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1.old-fashion"><span class="toc-number">2.</span> <span class="toc-text">1.old-fashion</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF"><span class="toc-number">2.1.</span> <span class="toc-text">题目信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">2.2.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2.%5Bafctf2018%5Dmorse"><span class="toc-number">3.</span> <span class="toc-text">2.[AFCTF2018]Morse</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-1"><span class="toc-number">3.1.</span> <span class="toc-text">题目信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-1"><span class="toc-number">3.2.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3.%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99"><span class="toc-number">4.</span> <span class="toc-text">3.隐藏的钥匙</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-2"><span class="toc-number">4.1.</span> <span class="toc-text">题目信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-2"><span class="toc-number">4.2.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4.%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C"><span class="toc-number">5.</span> <span class="toc-text">4.另外一个世界</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-3"><span class="toc-number">5.1.</span> <span class="toc-text">题目信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-3"><span class="toc-number">5.2.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5.%5B%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019%5Dsecret-file"><span class="toc-number">6.</span> <span class="toc-text">5.[极客大挑战 2019]Secret File</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-4"><span class="toc-number">6.1.</span> <span class="toc-text">题目信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-4"><span class="toc-number">6.2.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">注：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E5%8F%A3%E8%AF%80%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">总结口诀：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1.rsa3"><span class="toc-number">2.</span> <span class="toc-text">1.RSA3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">2.1.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2.rsa2"><span class="toc-number">3.</span> <span class="toc-text">2.RSA2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-1"><span class="toc-number">3.1.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3.%E8%BF%98%E5%8E%9F%E5%A4%A7%E5%B8%88"><span class="toc-number">4.</span> <span class="toc-text">3.还原大师</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-2"><span class="toc-number">4.1.</span> <span class="toc-text">解题思路、步骤：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%EF%BC%9A-1"><span class="toc-number">4.2.</span> <span class="toc-text">注：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4.%E5%BC%82%E6%80%A7%E7%9B%B8%E5%90%B8"><span class="toc-number">5.</span> <span class="toc-text">4.异性相吸</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-3"><span class="toc-number">5.1.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5.rsa"><span class="toc-number">6.</span> <span class="toc-text">5.RSA</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-4"><span class="toc-number">6.1.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6.rsaroll"><span class="toc-number">7.</span> <span class="toc-text">6.RSAROLL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-5"><span class="toc-number">7.1.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li></ol>
       
   </div>
 </div>
@@ -365,13 +362,13 @@
   
 </aside>
 
-          <section id="main"><article id="post-CTF-buuctf每日打卡wp 1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+          <section id="main"><article id="post-CTF-buuctf每日打卡wp 2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-inner" data-aos="fade-up">
     <div class="article-meta">
       <div class="article-date">
   <span class="article-date-link" data-aos="zoom-in">
-    <time datetime="2025-05-13T12:29:45.000Z" itemprop="datePublished">2025-05-13</time>
-    <time style="display: none;" id="post-update-time">2025-05-14</time>
+    <time datetime="2025-05-19T11:51:28.000Z" itemprop="datePublished">2025-05-19</time>
+    <time style="display: none;" id="post-update-time">2025-05-19</time>
   </span>
 </div>
 
@@ -385,79 +382,140 @@
       
       
         <h2 id="%E5%89%8D%E8%A8%80" tabindex="-1">前言</h2>
-<p>不参加ctf比赛真的是不知道自己是有多么的菜，更严重的是之前做过的题由于没有总结归纳导致再次碰到同样类型的题仍然还是不会，可见总结归纳是多么重要。因此，作为一名ctf萌新，我决定改掉这种不好的习惯，每次做题后都要写下该题的wp,痛改前非，接下来让我们一起进步吧。</p>
-<h2 id="1.old-fashion" tabindex="-1">1.old-fashion</h2>
-<h3 id="%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF" tabindex="-1">题目信息</h3>
+<p>话不多说，直接开始，今天主要是讲解Crypto类之中的RSA的题目，涉及大量python脚本,需要用到pycharm等软件。</p>
+<h3 id="%E6%B3%A8%EF%BC%9A" tabindex="-1">注：</h3>
+<p>符号	               含义<br>
+p, q	               两个大素数<br>
+n = p * q	模数<br>
+φ(n) = (p-1)(q-1)	   欧拉函数<br>
+e	                   公钥指数（一般选 65537）<br>
+d	                   私钥指数，使得 e * d ≡ 1 (mod φ(n))<br>
+m	                   明文（message），满足 0 ≤ m &lt; n<br>
+c	                   密文（ciphertext）</p>
+<h3 id="%E6%80%BB%E7%BB%93%E5%8F%A3%E8%AF%80%EF%BC%9A" tabindex="-1">总结口诀：</h3>
+<p>有 d 求 m，有 e 求 d；有 p,q 就能解密。</p>
+<h2 id="1.rsa3" tabindex="-1">1.RSA3</h2>
 <ul>
-<li><strong>类别：</strong> Crypto</li>
 <li><strong>题目描述：</strong>  注意：得到的 flag 请包上 flag{} 提交</li>
-<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="https://files.buuoj.cn/files/ea2431d5c3f2421da0ea46f8346163b0/ec8bd2cf-5fa6-4fed-9d8f-f820bae6cfd6.zip">ec8bd2cf-5fa6-4fed-9d8f-f820bae6cfd6.zip</a></li>
+<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="https://files.buuoj.cn/files/629065f1c7a66a4a8ed63dcb78351b5e/92e0d936-c5ea-43c0-8d8c-d66effec3456.zip">92e0d936-c5ea-43c0-8d8c-d66effec3456.zip</a></li>
 </ul>
 <hr>
 <h3 id="%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A" tabindex="-1">解题思路、步骤：</h3>
-<p>首先下载附件，解压打开后出现题目.txt文件，打开后内容出现：<br>
-<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513210221666.png" alt="屏幕截图 2025-05-13 210154"><br>
-观察后发现后面的f1_2jyf-k3_jg1-vb-vl_l应该是flag，于是采用凯撒进行枚举，没有发现flag，然后想到 <a target="_blank" rel="noopener" href="https://quipqiup.com/">https://quipqiup.com/</a> 网站(一个快速且自动化的密码求解器)，观察可知dsln应该是flag，所以在Clues这一栏中填写dsln=flag，然后点击solve，即可得到flag。<br>
-<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513210724473.png" alt="屏幕截图 2025-05-12 231715"></p>
-<h2 id="2.%5Bafctf2018%5Dmorse" tabindex="-1">2.[AFCTF2018]Morse</h2>
-<h3 id="%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-1" tabindex="-1">题目信息</h3>
+<p>首先下载附件，打开后是一个txt文件，打开后内容如下：<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519195935848.png" alt="屏幕截图 2025-05-19 195853"><br>
+已知c1,c2,n,e1,e2，让我们来求私钥d，脚本如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">import</span> binascii</span><br><span class="line"></span><br><span class="line">n = <span class="number">22708078815885011462462049064339185898712439277226831073457888403129378547350292420267016551819052430779004755846649044001024141485283286483130702616057274698473611149508798869706347501931583117632710700787228016480127677393649929530416598686027354216422565934459015161927613607902831542857977859612596282353679327773303727004407262197231586324599181983572622404590354084541788062262164510140605868122410388090174420147752408554129789760902300898046273909007852818474030770699647647363015102118956737673941354217692696044969695308506436573142565573487583507037356944848039864382339216266670673567488871508925311154801</span></span><br><span class="line">c1 = <span class="number">22322035275663237041646893770451933509324701913484303338076210603542612758956262869640822486470121149424485571361007421293675516338822195280313794991136048140918842471219840263536338886250492682739436410013436651161720725855484866690084788721349555662019879081501113222996123305533009325964377798892703161521852805956811219563883312896330156298621674684353919547558127920925706842808914762199011054955816534977675267395009575347820387073483928425066536361482774892370969520740304287456555508933372782327506569010772537497541764311429052216291198932092617792645253901478910801592878203564861118912045464959832566051361</span></span><br><span class="line">c2 = <span class="number">18702010045187015556548691642394982835669262147230212731309938675226458555210425972429418449273410535387985931036711854265623905066805665751803269106880746769003478900791099590239513925449748814075904017471585572848473556490565450062664706449128415834787961947266259789785962922238701134079720414228414066193071495304612341052987455615930023536823801499269773357186087452747500840640419365011554421183037505653461286732740983702740822671148045619497667184586123657285604061875653909567822328914065337797733444640351518775487649819978262363617265797982843179630888729407238496650987720428708217115257989007867331698397</span></span><br><span class="line">e1 = <span class="number">11187289</span></span><br><span class="line">e2 = <span class="number">9647291</span></span><br><span class="line"></span><br><span class="line">s = gmpy2.gcdext(e1,e2)</span><br><span class="line">a = s[<span class="number">1</span>]</span><br><span class="line">b = s[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> a&lt;<span class="number">0</span>:</span><br><span class="line">    a = -a</span><br><span class="line">    c1 = gmpy2.invert(c1,n)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    b = -b</span><br><span class="line">    c2 = gmpy2.invert(c2,n)</span><br><span class="line"></span><br><span class="line">m = (gmpy2.powmod(c1,a,n)*gmpy2.powmod(c2,b,n))%n</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(binascii.unhexlify(<span class="built_in">hex</span>(m)[<span class="number">2</span>:]))</span><br></pre></td></tr></table></figure>
+<p>从而得到flag<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519200433055.png" alt="屏幕截图 2025-05-19 200412"></p>
+<h2 id="2.rsa2" tabindex="-1">2.RSA2</h2>
 <ul>
-<li><strong>类别：</strong> Crypto</li>
-<li><strong>题目描述：</strong>  得到的 flag 请包上 flag{} 提交。</li>
-<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="https://files.buuoj.cn/files/12ecb33066d2043f31daf11b2812edfe/attachment.txt">attachment.txt</a></li>
+<li><strong>题目描述：</strong>  注意：得到的 flag 请包上 flag{} 提交</li>
+<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="https://files.buuoj.cn/files/727ddff37a97b82e59b211e0375eea18/3e6857a6-18f1-4f9e-baa2-f61dfc8d110e.zip">3e6857a6-18f1-4f9e-baa2-f61dfc8d110e.zip</a></li>
 </ul>
 <hr>
 <h3 id="%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-1" tabindex="-1">解题思路、步骤：</h3>
-<p>首先下载附件，打开后出现一段密码，立即知道是摩斯密码<br>
-<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513211448228.png" alt="屏幕截图 2025-05-13 211429"><br>
-于是打开随波逐流软件，选择摩斯密码解密，得到一串密码<br>
-<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513211748747.png" alt="屏幕截图 2025-05-13 211727"><br>
-根据形式可以知道，应该是base x编码，于是直接一键解码，得到flag。<br>
-<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513212257519.png" alt="屏幕截图 2025-05-12 231730"></p>
-<h2 id="3.%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99" tabindex="-1">3.隐藏的钥匙</h2>
-<h3 id="%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-2" tabindex="-1">题目信息</h3>
+<p>首先下载附件，打开后得到一个题目.txt文件，打开后内容如下：<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519200735915.png" alt="屏幕截图 2025-05-19 200724"><br>
+由题目可知，这是根据e,n,dp,c来求明文m的题目，脚本如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">import</span> binascii</span><br><span class="line">e = <span class="number">65537</span></span><br><span class="line">n = <span class="number">248254007851526241177721526698901802985832766176221609612258877371620580060433101538328030305219918697643619814200930679612109885533801335348445023751670478437073055544724280684733298051599167660303645183146161497485358633681492129668802402065797789905550489547645118787266601929429724133167768465309665906113</span></span><br><span class="line">dp = <span class="number">905074498052346904643025132879518330691925174573054004621877253318682675055421970943552016695528560364834446303196939207056642927148093290374440210503657</span></span><br><span class="line"></span><br><span class="line">c = <span class="number">140423670976252696807533673586209400575664282100684119784203527124521188996403826597436883766041879067494280957410201958935737360380801845453829293997433414188838725751796261702622028587211560353362847191060306578510511380965162133472698713063592621028959167072781482562673683090590521214218071160287665180751</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,e):</span><br><span class="line">    <span class="keyword">if</span> (e*dp-<span class="number">1</span>)%i == <span class="number">0</span> <span class="keyword">and</span> n%((e*dp-<span class="number">1</span>)//i+<span class="number">1</span>)==<span class="number">0</span>:</span><br><span class="line">        q = n//((e*dp-<span class="number">1</span>)//i+<span class="number">1</span>)</span><br><span class="line">        phi = (q-<span class="number">1</span>)*((e*dp-<span class="number">1</span>)//i)</span><br><span class="line">        d = gmpy2.invert(e,phi)</span><br><span class="line">        m = gmpy2.powmod(c,d,n)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(binascii.unhexlify(<span class="built_in">hex</span>(m)[<span class="number">2</span>:]))</span><br></pre></td></tr></table></figure>
+<p>从而得到flag<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519202109371.png" alt="屏幕截图 2025-05-19 202056"></p>
+<h2 id="3.%E8%BF%98%E5%8E%9F%E5%A4%A7%E5%B8%88" tabindex="-1">3.还原大师</h2>
 <ul>
-<li><strong>类别：</strong> Misc</li>
-<li><strong>题目描述：</strong>  路飞一行人千辛万苦来到了伟大航道的终点，找到了传说中的One piece，但是需要钥匙才能打开One Piece大门，钥匙就隐藏在下面的图片中，聪明的你能帮路飞拿到钥匙，打开One Piece的大门吗？ 注意：得到的 flag 请包上 flag{} 提交</li>
-<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="https://files.buuoj.cn/files/c1c5ee5cee98ab7aa11236b1422c7476/8f6577ab-4019-4e61-aeec-a6d4fa492994.zip">8f6577ab-4019-4e61-aeec-a6d4fa492994.zip</a></li>
+<li><strong>题目描述：</strong>  我们得到了一串神秘字符串：TASC?O3RJMV?WDJKX?ZM,问号部分是未知大写字母，为了确定这个神秘字符串，我们通过了其他途径获得了这个字串的32位MD5码。但是我们获得它的32位MD5码也是残缺不全，E903???4DAB???08???51?80??8A?,请猜出神秘字符串的原本模样，并且提交这个字串的32位MD5码作为答案。 注意：得到的 flag 请包上 flag{} 提交</li>
 </ul>
 <hr>
 <h3 id="%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-2" tabindex="-1">解题思路、步骤：</h3>
-<p>首先下载附件，解压后出现一张.jpg照片，照片标题为“隐藏的钥匙”，根据之前做图像类Misc的习惯，放到winhex中查看，并且直接ctrl+f搜索flag，发现flag在右边<br>
-<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513212746506.png" alt="屏幕截图 2025-05-12 231912"><br>
-根据提示直接用base64解码即可得到flag。（但是如果选择一键解码，则会得不到flag）<br>
-<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513213147129.png" alt="屏幕截图 2025-05-13 213132"></p>
-<h2 id="4.%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C" tabindex="-1">4.另外一个世界</h2>
-<h3 id="%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-3" tabindex="-1">题目信息</h3>
+<p>打开题目，发现题目大概意思是让我们确定TASC?O3RJMV?WDJKX?ZM中的？所代表的大写字母，并且给出了这个字串的32位MD5码，E903???4DAB???08???51?80??8A?，我们可以通过python脚本进行暴力破解，脚本如下；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="comment"># 原始密码模板</span></span><br><span class="line">template = <span class="string">&#x27;TASC?O3RJMV?WDJKX?ZM&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 目标MD5模板</span></span><br><span class="line">target_md5_pattern = <span class="string">&#x27;E903???4DAB????08?????51?80??8A?&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 找出所有的 ? 位索引</span></span><br><span class="line">question_indices = [i <span class="keyword">for</span> i, c <span class="keyword">in</span> <span class="built_in">enumerate</span>(template) <span class="keyword">if</span> c == <span class="string">&#x27;?&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 枚举所有可能的大写字母组合</span></span><br><span class="line"><span class="keyword">for</span> combo <span class="keyword">in</span> itertools.product(<span class="string">&#x27;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#x27;</span>, repeat=<span class="built_in">len</span>(question_indices)):</span><br><span class="line">    <span class="comment"># 构造尝试的密码</span></span><br><span class="line">    temp_list = <span class="built_in">list</span>(template)</span><br><span class="line">    <span class="keyword">for</span> idx, letter <span class="keyword">in</span> <span class="built_in">zip</span>(question_indices, combo):</span><br><span class="line">        temp_list[idx] = letter</span><br><span class="line">    test_password = <span class="string">&#x27;&#x27;</span>.join(temp_list)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算MD5</span></span><br><span class="line">    md5_hash = hashlib.md5(test_password.encode()).hexdigest().upper()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 和目标 MD5 模板进行匹配（支持通配符?）</span></span><br><span class="line">    matched = <span class="built_in">all</span>(p == <span class="string">&#x27;?&#x27;</span> <span class="keyword">or</span> p == h <span class="keyword">for</span> p, h <span class="keyword">in</span> <span class="built_in">zip</span>(target_md5_pattern, md5_hash))</span><br><span class="line">    <span class="keyword">if</span> matched:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;[✔] 找到匹配项: <span class="subst">&#123;test_password&#125;</span> =&gt; <span class="subst">&#123;md5_hash&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>从而得到flag<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519202644671.png" alt="屏幕截图 2025-05-19 202630"></p>
+<h3 id="%E6%B3%A8%EF%BC%9A-1" tabindex="-1">注：</h3>
+<p>我们可以借助询问ai，从而得到该脚本，询问内容如下；<br>
+TASC?O3RJMV?WDJKX?ZM 中间的问号是未知大写字符，使通过枚举给出相关的密码，并且求出他的md5，并且与E903???4DAB???08???51?80??8A?进行对比，求出符合的md5,用python写脚本</p>
+<h2 id="4.%E5%BC%82%E6%80%A7%E7%9B%B8%E5%90%B8" tabindex="-1">4.异性相吸</h2>
 <ul>
-<li><strong>类别：</strong> Misc</li>
-<li><strong>题目描述：</strong>  注意：得到的 flag 请包上 flag{} 提交</li>
-<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="https://files.buuoj.cn/files/c95169c7b458ffd8ea0c5a72f6575ce3/31c48bab-cf07-4588-bc34-bd677811cf20.zip">31c48bab-cf07-4588-bc34-bd677811cf20.zip</a></li>
+<li><strong>题目描述：</strong> 最近出现了一个奇葩观点，说性别都不一样，怎么能谈恋爱？为了证明这个观点错误，请大家证明异性是相吸的。 注意：得到的 flag 请包上 flag{} 提交</li>
+<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="https://files.buuoj.cn/files/d18ec9192c4b61a2ebb37dd730aad205/b8c1caee-43d6-42ee-aecc-d72502a5ade2.zip">b8c1caee-43d6-42ee-aecc-d72502a5ade2.zip</a></li>
 </ul>
 <hr>
 <h3 id="%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-3" tabindex="-1">解题思路、步骤：</h3>
-<p>首先下载附件，解压后出现一张.jpg文件，直接放到winhex中查看，查找flag发现没有，然后观察开头和结尾，发现结尾处有一串二进制密码<br>
-<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513213729714.png" alt="屏幕截图 2025-05-13 213721"><br>
-然后在浏览器搜索二进制转字符串在线工具，把原码放进去即可得到flag。<br>
-<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214102497.png" alt="屏幕截图 2025-05-13 214003"></p>
-<h2 id="5.%5B%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019%5Dsecret-file" tabindex="-1">5.[极客大挑战 2019]Secret File</h2>
-<h3 id="%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-4" tabindex="-1">题目信息</h3>
+<p>首先下载附件，打开后得到两个txt文件，一个是key.txt,一个是密文.txt，通过查询ai可得，这应该是将密文（Unicode 字符串）转换成 UTF-16BE 字节流，再执行XOR解密（key 循环），然后将解密结果作为UTF-8解码，从而得到flag。脚本如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">decrypt</span>(<span class="params">ciphertext, key</span>):</span><br><span class="line">    <span class="comment"># 将密文（Unicode 字符串）转换成 UTF-16BE 字节流</span></span><br><span class="line">    cipher_bytes = ciphertext.encode(<span class="string">&#x27;utf-16be&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 准备 key 字节</span></span><br><span class="line">    key_bytes = key.encode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    key_len = <span class="built_in">len</span>(key_bytes)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 执行 XOR 解密（key 循环）</span></span><br><span class="line">    decrypted_bytes = <span class="built_in">bytes</span>([</span><br><span class="line">        b ^ key_bytes[i % key_len]</span><br><span class="line">        <span class="keyword">for</span> i, b <span class="keyword">in</span> <span class="built_in">enumerate</span>(cipher_bytes)</span><br><span class="line">    ])</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 尝试将解密结果作为 UTF-8 解码</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        plaintext = decrypted_bytes.decode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;[✔] 解密成功！明文如下：&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(plaintext)</span><br><span class="line">    <span class="keyword">except</span> UnicodeDecodeError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;[✘] 解密失败，可能不是 UTF-8 编码。原始字节如下：&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(decrypted_bytes)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 密文和 key</span></span><br><span class="line">cipher = <span class="string">&#x27;ܟ\x03ࠄቕ̐员䭜塊噓䑒̈́ɘ䘆呇Ֆ䝗䐒嵊ᐛ&#x27;</span></span><br><span class="line">key = <span class="string">&#x27;asadsasdasdasdasdasdasdasdasdasdqwesqf&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 解密调用</span></span><br><span class="line">decrypt(cipher, key)</span><br></pre></td></tr></table></figure>
+<p>从而得到flag<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519203510429.png" alt="屏幕截图 2025-05-19 203502"></p>
+<h2 id="5.rsa" tabindex="-1">5.RSA</h2>
 <ul>
-<li><strong>类别：</strong> Web</li>
-<li><strong>题目描述：</strong>  无</li>
+<li><strong>题目描述：</strong> RSA 注意：得到的 flag 请包上 flag{} 提交</li>
+<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="https://files.buuoj.cn/files/554ff21546594c190fbcc41cd5d4a78c/0eaf8d6c-3fe5-4549-9e81-94ac42535e7b.zip">0eaf8d6c-3fe5-4549-9e81-94ac42535e7b.zip</a></li>
 </ul>
 <hr>
 <h3 id="%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-4" tabindex="-1">解题思路、步骤：</h3>
-<p>启动靶机，发现是一个网站，直接ctrl+u查看源代码，发现里面有一个./Archive_room.php文件，于是直接打开<br>
-<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214400348.png" alt="屏幕截图 2025-05-12 235239"><br>
-直接点击SECRET，页面如下<br>
-<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214439348.png" alt="屏幕截图 2025-05-12 235244"><br>
-尝试几次后，想到应该是有一个网页闪过去了，于是直接抓包，打开bp,开始抓包<br>
-<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214558361.png" alt="屏幕截图 2025-05-12 235636"><br>
-最终在Response中发现了一个注释掉的一个文件，然后直接在靶机上打开，发现出现了一堆代码，但是没有flag信息，于是这时候解酒药想到代码审计<br>
-<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214808817.png" alt="屏幕截图 2025-05-13 000157"><br>
-这时候出现了一串base64的编码，直接放到工具中解码，然后可得到flag。<br>
-<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250513214917252.png" alt="屏幕截图 2025-05-13 000234"></p>
+<p>首先下载附件，打开后得到一个.enc文件和一个.key文件，可知.key应该是密码，并且根据.enc文件的文件展示可知应该是在wireshark中进行密码解密，所以打开wireshark<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519204023963.png" alt="屏幕截图 2025-05-19 204011"><br>
+从而得到一串密文，根据内容提示这应该是公钥然后打开<a target="_blank" rel="noopener" href="http://www.hiencode.com/pub_asys.html">http://www.hiencode.com/pub_asys.html</a>进行公钥解密，（.key文件用记事本打开）<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519204431480.png" alt="屏幕截图 2025-05-19 204418"><br>
+从而得到e,n,然后再打开<a target="_blank" rel="noopener" href="https://factordb.com/index.php">https://factordb.com/index.php</a>这个网站进行质因数分解获得p,q<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519204626605.png" alt="屏幕截图 2025-05-19 204609"><br>
+然后这个时候我们已经知道n,p,q,e,并且也有一个.enc文件(二进制文件，需要将后缀改为.txt)所以直接用脚本解密：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">import</span> rsa</span><br><span class="line"></span><br><span class="line">e = <span class="number">65537</span></span><br><span class="line">p = <span class="number">285960468890451637935629440372639283459</span></span><br><span class="line">q = <span class="number">304008741604601924494328155975272418463</span></span><br><span class="line"></span><br><span class="line">phi_n = (p-<span class="number">1</span>)*(q-<span class="number">1</span>)</span><br><span class="line">d = gmpy2.invert(e, phi_n)</span><br><span class="line">key = rsa.PrivateKey(p*q, e, d, p, q)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;flag.txt&quot;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> file:  <span class="comment"># 以二进制读模式，读取密文</span></span><br><span class="line">    file = file.read()</span><br><span class="line">    <span class="built_in">print</span>(rsa.decrypt(file, key))  <span class="comment"># file:公钥加密结果  key:私钥</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># b&#x27;flag&#123;decrypt_256&#125;\n&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>从而得到flag<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519205747917.png" alt="屏幕截图 2025-05-19 205710"></p>
+<h2 id="6.rsaroll" tabindex="-1">6.RSAROLL</h2>
+<ul>
+<li><strong>题目描述：</strong> 注意：得到的 flag 请包上 flag{} 提交</li>
+<li><strong>附件下载：</strong> <a target="_blank" rel="noopener" href="https://files.buuoj.cn/files/218f38fb1b8ebb64aae06efec9795955/02c01a13-3a86-47de-8648-f03328a5e5d8.zip">02c01a13-3a86-47de-8648-f03328a5e5d8.zip</a></li>
+</ul>
+<hr>
+<h3 id="%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-5" tabindex="-1">解题思路、步骤：</h3>
+<p>首先下载附件，打开后是两个.txt文件，内容如下：<br>
+RSA roll！roll！roll！<br>
+Only number and a-z<br>
+（don’t use editor<br>
+which MS provide）</p>
+<p 920139713,19=""></p>
+<p>704796792<br>
+752211152<br>
+274704164<br>
+18414022<br>
+368270835<br>
+483295235<br>
+263072905<br>
+459788476<br>
+483295235<br>
+459788476<br>
+663551792<br>
+475206804<br>
+459788476<br>
+428313374<br>
+475206804<br>
+459788476<br>
+425392137<br>
+704796792<br>
+458265677<br>
+341524652<br>
+483295235<br>
+534149509<br>
+425392137<br>
+428313374<br>
+425392137<br>
+341524652<br>
+458265677<br>
+263072905<br>
+483295235<br>
+828509797<br>
+341524652<br>
+425392137<br>
+475206804<br>
+428313374<br>
+483295235<br>
+475206804<br>
+459788476<br>
+306220148</p>
+<p>看了半天才知道920139713是n,19是e,后面是拆分的密文c,并且根据题目提示，roll是滚动的意思，然后使用以下脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> libnum</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> long_to_bytes</span><br><span class="line">list1=[<span class="number">704796792</span>,</span><br><span class="line"><span class="number">752211152</span>,</span><br><span class="line"><span class="number">274704164</span>,</span><br><span class="line"><span class="number">18414022</span>,</span><br><span class="line"><span class="number">368270835</span>,</span><br><span class="line"><span class="number">483295235</span>,</span><br><span class="line"><span class="number">263072905</span>,</span><br><span class="line"><span class="number">459788476</span>,</span><br><span class="line"><span class="number">483295235</span>,</span><br><span class="line"><span class="number">459788476</span>,</span><br><span class="line"><span class="number">663551792</span>,</span><br><span class="line"><span class="number">475206804</span>,</span><br><span class="line"><span class="number">459788476</span>,</span><br><span class="line"><span class="number">428313374</span>,</span><br><span class="line"><span class="number">475206804</span>,</span><br><span class="line"><span class="number">459788476</span>,</span><br><span class="line"><span class="number">425392137</span>,</span><br><span class="line"><span class="number">704796792</span>,</span><br><span class="line"><span class="number">458265677</span>,</span><br><span class="line"><span class="number">341524652</span>,</span><br><span class="line"><span class="number">483295235</span>,</span><br><span class="line"><span class="number">534149509</span>,</span><br><span class="line"><span class="number">425392137</span>,</span><br><span class="line"><span class="number">428313374</span>,</span><br><span class="line"><span class="number">425392137</span>,</span><br><span class="line"><span class="number">341524652</span>,</span><br><span class="line"><span class="number">458265677</span>,</span><br><span class="line"><span class="number">263072905</span>,</span><br><span class="line"><span class="number">483295235</span>,</span><br><span class="line"><span class="number">828509797</span>,</span><br><span class="line"><span class="number">341524652</span>,</span><br><span class="line"><span class="number">425392137</span>,</span><br><span class="line"><span class="number">475206804</span>,</span><br><span class="line"><span class="number">428313374</span>,</span><br><span class="line"><span class="number">483295235</span>,</span><br><span class="line"><span class="number">475206804</span>,</span><br><span class="line"><span class="number">459788476</span>,</span><br><span class="line"><span class="number">306220148</span>]</span><br><span class="line">flag=<span class="string">&quot;&quot;</span></span><br><span class="line">n=<span class="number">920139713</span></span><br><span class="line">q=<span class="number">18443</span></span><br><span class="line">p=<span class="number">49891</span></span><br><span class="line">e=<span class="number">19</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> list1:</span><br><span class="line">	c=i</span><br><span class="line">	d = libnum.invmod(e, (p - <span class="number">1</span>) * (q - <span class="number">1</span>)) 		<span class="comment">#invmod(a, n) - 求a对于n的模逆,这里逆向加密过程中计算ψ(n)=(p-1)(q-1)，对ψ(n)保密,也就是对应根据ed=1modψ(n),求出d</span></span><br><span class="line">	m = <span class="built_in">pow</span>(c, d, n)  						<span class="comment"># pow(x, y[, z])--函数是计算 x 的 y 次方，如果 z 在存在，则再对结果进行取模，其结果等效于 pow(x,y) %z，对应前面解密算法中M=D(C)=C^d(mod n)</span></span><br><span class="line"><span class="comment">#print(m) #明文的十进制格式</span></span><br><span class="line">	string = long_to_bytes(m)  				<span class="comment"># m明文，用长字节划范围</span></span><br><span class="line">	flag+=string.decode()</span><br><span class="line"><span class="built_in">print</span>(flag)</span><br></pre></td></tr></table></figure>
+<p>从而得到flag<br>
+<img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250519205747917.png" alt="屏幕截图 2025-05-19 205710"></p>
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
 
@@ -467,7 +525,7 @@
       
         <blockquote class="article-copyright">
     <p><strong><span class="icon-user icon"></span>Author: </strong>Landon298 @ Landon298 Blog</p>
-    <p><strong><span class="icon-link icon"></span>Permalink: </strong><a href="https://landon298.github.io/en/2025/05/13/undefined/">https://landon298.github.io/en/2025/05/13/undefined/</a></p>
+    <p><strong><span class="icon-link icon"></span>Permalink: </strong><a href="https://landon298.github.io/en/2025/05/19/undefined/">https://landon298.github.io/en/2025/05/19/undefined/</a></p>
     
     
     
@@ -507,43 +565,43 @@
       
         <div class="share-wrapper">
   
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flandon298.github.io%2F2025%2F05%2F13%2Fundefined%2F" target="_blank" rel="noopener noreferrer" title="CTF-Buuctf每日打卡wp 1">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flandon298.github.io%2F2025%2F05%2F19%2Fundefined%2F" target="_blank" rel="noopener noreferrer" title="CTF-Buuctf每日打卡wp 2">
       <div class="share-icon icon icon-facebook">
         
       </div>
     </a>
   
-    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Flandon298.github.io%2F2025%2F05%2F13%2Fundefined%2F&amp;text=CTF-Buuctf%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1wp%201&amp;via=https%3A%2F%2FLandon298.github.io" target="_blank" rel="noopener noreferrer" title="CTF-Buuctf每日打卡wp 1">
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Flandon298.github.io%2F2025%2F05%2F19%2Fundefined%2F&amp;text=CTF-Buuctf%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1wp%202&amp;via=https%3A%2F%2FLandon298.github.io" target="_blank" rel="noopener noreferrer" title="CTF-Buuctf每日打卡wp 2">
       <div class="share-icon icon icon-twitter">
         
       </div>
     </a>
   
-    <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Flandon298.github.io%2F2025%2F05%2F13%2Fundefined%2F&amp;title=CTF-Buuctf%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1wp%201&amp;summary=CTF-Buuctf%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1wp%201&amp;mini=true&amp;ro=true" target="_blank" rel="noopener noreferrer" title="CTF-Buuctf每日打卡wp 1">
+    <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Flandon298.github.io%2F2025%2F05%2F19%2Fundefined%2F&amp;title=CTF-Buuctf%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1wp%202&amp;summary=CTF-Buuctf%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1wp%202&amp;mini=true&amp;ro=true" target="_blank" rel="noopener noreferrer" title="CTF-Buuctf每日打卡wp 2">
       <div class="share-icon icon icon-linkedin">
         
       </div>
     </a>
   
-    <a href="https://www.reddit.com/submit?url=https%3A%2F%2Flandon298.github.io%2F2025%2F05%2F13%2Fundefined%2F&amp;title=CTF-Buuctf%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1wp%201" target="_blank" rel="noopener noreferrer" title="CTF-Buuctf每日打卡wp 1">
+    <a href="https://www.reddit.com/submit?url=https%3A%2F%2Flandon298.github.io%2F2025%2F05%2F19%2Fundefined%2F&amp;title=CTF-Buuctf%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1wp%202" target="_blank" rel="noopener noreferrer" title="CTF-Buuctf每日打卡wp 2">
       <div class="share-icon icon icon-reddit">
         
       </div>
     </a>
   
-    <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Flandon298.github.io%2F2025%2F05%2F13%2Fundefined%2F&amp;appkey=&amp;title=CTF-Buuctf%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1wp%201&amp;pic=&amp;ralateUid=" target="_blank" rel="noopener noreferrer" title="CTF-Buuctf每日打卡wp 1">
+    <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Flandon298.github.io%2F2025%2F05%2F19%2Fundefined%2F&amp;appkey=&amp;title=CTF-Buuctf%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1wp%202&amp;pic=&amp;ralateUid=" target="_blank" rel="noopener noreferrer" title="CTF-Buuctf每日打卡wp 2">
       <div class="share-icon icon icon-weibo">
         
       </div>
     </a>
   
-    <a href="https://connect.qq.com/widget/shareqq/index.html?url=www.baidu.com&amp;title=CTF-Buuctf%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1wp%201&amp;desc=CTF-Buuctf%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1wp%201&amp;source=https%3A%2F%2FLandon298.github.io" target="_blank" rel="noopener noreferrer" title="CTF-Buuctf每日打卡wp 1">
+    <a href="https://connect.qq.com/widget/shareqq/index.html?url=www.baidu.com&amp;title=CTF-Buuctf%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1wp%202&amp;desc=CTF-Buuctf%E6%AF%8F%E6%97%A5%E6%89%93%E5%8D%A1wp%202&amp;source=https%3A%2F%2FLandon298.github.io" target="_blank" rel="noopener noreferrer" title="CTF-Buuctf每日打卡wp 2">
       <div class="share-icon icon icon-qq">
         
       </div>
     </a>
   
-    <a href="javascript:;"  title="CTF-Buuctf每日打卡wp 1">
+    <a href="javascript:;"  title="CTF-Buuctf每日打卡wp 2">
       <div class="share-icon icon icon-weixin">
         
           <div id="share-weixin">
@@ -570,15 +628,15 @@
 </div>
       
       
-        <a data-aos="zoom-in" href="/en/2025/05/13/undefined/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/en/2025/05/13/undefined/" itemprop="commentCount"></span>
+        <a data-aos="zoom-in" href="/en/2025/05/19/undefined/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/en/2025/05/19/undefined/" itemprop="commentCount"></span>
           Comments
         </a>
       
       
       
       
-        <span data-aos="zoom-in" id="/en/2025/05/13/undefined/" class="leancloud_visitors article-visitor-link" data-flag-title="CTF-Buuctf每日打卡wp 1">
+        <span data-aos="zoom-in" id="/en/2025/05/19/undefined/" class="leancloud_visitors article-visitor-link" data-flag-title="CTF-Buuctf每日打卡wp 2">
           <span class="leancloud-visitors-count">0</span>
           <em class="post-meta-item-text">Readings</em>
         </span>
@@ -593,31 +651,17 @@
   
   <nav id="article-nav" data-aos="fade-up">
     
-      
-      <div class="article-nav-link-wrap article-nav-link-left">
-        
-          <img data-src="https://i.111666.best/image/iI6QBaOSDmi7ywvQ1pf2z0.jpg" data-sizes="auto" alt="CTF-Buuctf每日打卡wp 2" class="lazyload">
-        
-        <a href="/en/2025/05/19/undefined/"></a>
-        <div class="article-nav-caption">Newer</div>
-        <h3 class="article-nav-title">
-          
-            CTF-Buuctf每日打卡wp 2
-          
-        </h3>
-      </div>
-    
     
     
     <div class="article-nav-link-wrap article-nav-link-right">
       
-        <img data-src="https://i.111666.best/image/iI6QBaOSDmi7ywvQ1pf2z0.jpg" data-sizes="auto" alt="DeepSeek官方提示词（下部分）" class="lazyload">
+        <img data-src="https://i.111666.best/image/iI6QBaOSDmi7ywvQ1pf2z0.jpg" data-sizes="auto" alt="CTF-Buuctf每日打卡wp 1" class="lazyload">
       
-      <a href="/en/2025/02/19/undefined/"></a>
+      <a href="/en/2025/05/13/undefined/"></a>
       <div class="article-nav-caption">Older</div>
       <h3 class="article-nav-title">
         
-          DeepSeek官方提示词（下部分）
+          CTF-Buuctf每日打卡wp 1
         
       </h3>
     </div>
@@ -725,7 +769,7 @@
   <h3 class="toc-title">Contents</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1.old-fashion"><span class="toc-number">2.</span> <span class="toc-text">1.old-fashion</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF"><span class="toc-number">2.1.</span> <span class="toc-text">题目信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">2.2.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2.%5Bafctf2018%5Dmorse"><span class="toc-number">3.</span> <span class="toc-text">2.[AFCTF2018]Morse</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-1"><span class="toc-number">3.1.</span> <span class="toc-text">题目信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-1"><span class="toc-number">3.2.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3.%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99"><span class="toc-number">4.</span> <span class="toc-text">3.隐藏的钥匙</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-2"><span class="toc-number">4.1.</span> <span class="toc-text">题目信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-2"><span class="toc-number">4.2.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4.%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C"><span class="toc-number">5.</span> <span class="toc-text">4.另外一个世界</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-3"><span class="toc-number">5.1.</span> <span class="toc-text">题目信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-3"><span class="toc-number">5.2.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5.%5B%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019%5Dsecret-file"><span class="toc-number">6.</span> <span class="toc-text">5.[极客大挑战 2019]Secret File</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-4"><span class="toc-number">6.1.</span> <span class="toc-text">题目信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-4"><span class="toc-number">6.2.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">注：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E5%8F%A3%E8%AF%80%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">总结口诀：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1.rsa3"><span class="toc-number">2.</span> <span class="toc-text">1.RSA3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">2.1.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2.rsa2"><span class="toc-number">3.</span> <span class="toc-text">2.RSA2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-1"><span class="toc-number">3.1.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3.%E8%BF%98%E5%8E%9F%E5%A4%A7%E5%B8%88"><span class="toc-number">4.</span> <span class="toc-text">3.还原大师</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-2"><span class="toc-number">4.1.</span> <span class="toc-text">解题思路、步骤：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%EF%BC%9A-1"><span class="toc-number">4.2.</span> <span class="toc-text">注：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4.%E5%BC%82%E6%80%A7%E7%9B%B8%E5%90%B8"><span class="toc-number">5.</span> <span class="toc-text">4.异性相吸</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-3"><span class="toc-number">5.1.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5.rsa"><span class="toc-number">6.</span> <span class="toc-text">5.RSA</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-4"><span class="toc-number">6.1.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6.rsaroll"><span class="toc-number">7.</span> <span class="toc-text">6.RSAROLL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-5"><span class="toc-number">7.1.</span> <span class="toc-text">解题思路、步骤：</span></a></li></ol></li></ol>
       
   </div>
 </div>
@@ -1018,13 +1062,13 @@
       <script data-pjax>
         window.REIMU_POST = {
           author: "Landon298",
-          title: "CTF-Buuctf每日打卡wp 1",
-          url: "https://landon298.github.io/2025/05/13/undefined/",
+          title: "CTF-Buuctf每日打卡wp 2",
+          url: "https://landon298.github.io/2025/05/19/undefined/",
           excerpt: "",
           description: "",
-          stripContent: "前言 不参加ctf比赛真的是不知道自己是有多么的菜，更严重的是之前做过的题由于没有总结归纳导致再次碰到同样类型的题仍然还是不会，可见总结归纳是多么重要。因此，作为一名ctf萌新，我决定改掉这种不好的习惯，每次做题后都要写下该题的wp,痛改前非，接下来让我们一起进步吧。 1.old-fashion 题目信息  类别： Crypto 题目描述：  注意：得到的 flag 请包上 flag{} 提交 附件下载： ec8bd2cf-5fa6-4fed-9d8f-f820bae6cfd6.zip   解题",
-          date: "Tue May 13 2025 20:29:45 GMT+0800",
-          updated: "Wed May 14 2025 22:08:06 GMT+0800",
+          stripContent: "前言 话不多说，直接开始，今天主要是讲解Crypto类之中的RSA的题目，涉及大量python脚本,需要用到pycharm等软件。 注： 符号                含义 p, q                两个大素数 n = p * q 模数 φ(n) = (p-1)(q-1)    欧拉函数 e                    公钥指数（一般选 65537） d                    私钥指数，使得 e * d ≡ 1 (mod φ(n)) m       ",
+          date: "Mon May 19 2025 19:51:28 GMT+0800",
+          updated: "Mon May 19 2025 21:12:43 GMT+0800",
           cover: "https://i.111666.best/image/iI6QBaOSDmi7ywvQ1pf2z0.jpg",
         };
       </script>
