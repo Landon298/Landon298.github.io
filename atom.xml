@@ -6,7 +6,7 @@
   <link href="https://landon298.github.io/atom.xml" rel="self"/>
   
   <link href="https://landon298.github.io/"/>
-  <updated>2025-05-19T13:12:43.254Z</updated>
+  <updated>2025-05-31T04:05:19.890Z</updated>
   <id>https://landon298.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CTF-Buuctf每日打卡wp 3</title>
+    <link href="https://landon298.github.io/2025/05/29/undefined/"/>
+    <id>https://landon298.github.io/2025/05/29/undefined/</id>
+    <published>2025-05-29T05:38:31.000Z</published>
+    <updated>2025-05-31T04:05:19.890Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="%E5%89%8D%E8%A8%80" tabindex="-1">前言</h1><p>今天来讲一些关于web方面的题目，需要用到的工具有burpsuite,AntSword等，干货满满，如果有不懂的地方欢迎在评论区提问。</p><h2 id="1.%5B%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019%5Dhttp" tabindex="-1">1.[极客大挑战 2019]Http</h2><h3 id="%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF" tabindex="-1">题目信息</h3><ul><li><strong>类别：</strong> Web</li><li><strong>题目描述：</strong>  无</li></ul><hr><h3 id="%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A" tabindex="-1">解题思路、步骤：</h3><p>首先启动靶机，打开后发现页面是一个安全技术小组的介绍<br><img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250529135311484.png" alt="屏幕截图 2025-05-29 135243"><br>然后直接ctrl+u打开源代码，仔细观察后有一个.php文件，<br><img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250529140923664.png" alt="屏幕截图 2025-05-29 135411"><br>直接打开，发现页面展示如下：<br><img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250529141030075.png" alt="屏幕截图 2025-05-29 135359"><br>它的意思是提示你不是来自https://Sycsecret.buuoj.cn，然后想到题目Http，提示我们可以通过抓包来修改http报文header,于是直接抓包（我用的是burpsuit内置的浏览器），并且在header中添加**<code>Referer:https://Sycsecret.buuoj.cn</code>**，用来伪造访问来源<br><img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250529142124570.png" alt="屏幕截图 2025-05-29 135853"><br>放包后在响应包的ptrtty（高亮）栏目发现了提示<br><img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250529142157862.png" alt="屏幕截图 2025-05-29 140008"><br>具体意思是让我们使用Syclover 浏览器，但是我们可以通过修改User-Agent协议来伪造访问工具为 Syclover 浏览器，于是直接对其进行修改（重新抓包）<br><img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250529142435534.png" alt="屏幕截图 2025-05-29 140123"><br>再次放包后发现页面再次出现提示<br><img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250529142829664.png" alt="屏幕截图 2025-05-29 140328"><br>具体意思是这只能在本地阅读，于是在header添加X-Forwarded-For:127.0.0.1，用来伪造本地再次访问，这时得到flag<br><img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250529143009489.png" alt="屏幕截图 2025-05-29 140623"><br><img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250529143034182.png" alt="屏幕截图 2025-05-29 140519"></p><h3 id="%E9%99%84%E6%96%87" tabindex="-1">附文</h3><p>HTTP 头部字段：<br>Server:服务器指纹<br>Set-Cookie:向浏览器端设置Cookie<br>Last-Modified:服务器通过这个消息告诉浏览器，资源的最后修改时间<br>Content-Length:正文的长度<br>Refresh:服务器通过这个Refresh头告诉浏览器定时刷新浏览器<br>Location:服务器返回给客户端，用于重定向到新的位置<br>Vary:标识不可缓存的请求头列<br>Connection：链接方式<br>Host:请求的web服务器域名地址<br>User-Agent：HTTP客户端运行的浏览器类型的详细信息<br>Accept:指定客户端能够接收的内容类型。<br>Accept-Language：指客户端浏览器用来展示返回信息所选择的语言<br>cookie: HTTP请求发送时，会把保存在该请求域名下的所有cookie值一起发送给web服务器。<br>Referer:包含一个URL，用户从该URL代表的页面出发访问当前请求的页面<br>X-Forwarded-For:是一个HTTP扩展头部，用来表示HTTP请求端真实IP。<br>Content-Type:用于指定MIME类型，告诉浏览器如何解析响应体。</p><h2 id="2.%5B%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019%5Dupload" tabindex="-1">2.[极客大挑战 2019]Upload</h2><h3 id="%E9%A2%98%E7%9B%AE%E4%BF%A1%E6%81%AF-1" tabindex="-1">题目信息</h3><ul><li><strong>类别：</strong> Web</li><li><strong>题目描述：</strong>  无</li></ul><hr><h3 id="%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E3%80%81%E6%AD%A5%E9%AA%A4%EF%BC%9A-1" tabindex="-1">解题思路、步骤：</h3><p><img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250531102345829.png" alt="屏幕截图 2025-05-31 102338"><br>首先启动靶机，页面提示我们上传头像，根据这种题的常见思路：先上传一句话木马，然后再进行抓包，修改header中的content-type，最后直接用蚁剑连接，就可以看到flag了。那么步骤如下：<br>1.上传一句话木马，<strong><code>&lt;? php $eval($_POST['cmd']); ?&gt;</code></strong>，但是上传后发现这种不行，然后换成phtml格式再继续尝试（phtml：是一个嵌入了php脚本的html页面），phtml格式的一句话木马为：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script language=<span class="string">&#x27;php&#x27;</span>&gt;@<span class="keyword">eval</span>(<span class="variable">$_POST</span>[shell]);&lt;/script&gt;</span><br><span class="line">&lt;script language=<span class="string">&#x27;php&#x27;</span>&gt;<span class="title function_ invoke__">system</span>(<span class="string">&#x27;cat /flag&#x27;</span>);&lt;/script&gt;</span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250531103735472.png" alt="屏幕截图 2025-05-31 103726"><br>2.上传后页面发生改变<br><img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250531103735472.png" alt="屏幕截图 2025-05-31 103726"><br>然后进行抓包，由于我们上传的是文件而不是图片，所以我们需要更改content-type为image/jpeg，从而绕过。参考其他师傅的wp说这里的php格式不行，需要一直试到phtml才可以（绕过后缀的文件格式有php,php3,php4,php5,phtml.pht）。<br><img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250531105005278.png" alt="屏幕截图 2025-05-31 104955"><br>最后放包，得到新的页面<br><img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250531105019263.png" alt="屏幕截图 2025-05-31 104904"><br>这说明我们已经上传成功了。最后得到flag文件有两种方法；</p><h4 id="%E5%9C%A8%E7%BD%91%E9%A1%B5%E4%B8%AD%E5%BE%97%E5%88%B0flag%EF%BC%88%E6%8E%A8%E8%8D%90%EF%BC%89" tabindex="-1">在网页中得到flag（推荐）</h4><p>1.在靶机地址那个页面尝试上传一张图片，发现该页面是在<br>upload文件夹中，于是直接访问upload文件夹，即靶机地址/upload,然后我们就进入到了该文件夹，这时后只需要打开我们上传的那个文件就会得到flag了。<br><img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250531105601402.png" alt="image-20250531105601225"></p><h4 id="%E4%BD%BF%E7%94%A8%E8%9A%81%E5%89%91%E8%BF%9E%E6%8E%A5%E5%BE%97%E5%88%B0flag%EF%BC%88%E4%B8%BB%E8%A6%81%E6%98%AF%E5%A4%8D%E4%B9%A0%E4%B8%80%E4%B8%8B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%89" tabindex="-1">使用蚁剑连接得到flag（主要是复习一下使用方法）</h4><p>打开蚁剑，右键添加数据，在url地址一栏填入靶机地址/upload/filename.phtml,（filename意思是你上传的.phtml文件的名字），然后点击测试连接，如果连接成功，就点击连接，就可以渗透进去了，进去后直接打开终端，输入<strong>cat /flag</strong>，就可以得到flag了。<br><img src="https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250531111621283.png" alt="屏幕截图 2025-05-31 111450"></p><h4 id="%E6%B3%A8%EF%BC%9A" tabindex="-1">注：</h4><p>一、使用Burp Suite / Proxy 拦截修改从而伪造content-type绕过检测：<br>1.正常上传 .phtml 文件，浏览器默认发送：<br>2.用 Burp Suite 拦截请求，修改 Content-Type 为 image/jpeg：<br>3.如果服务器仅检查 Content-Type，可能绕过检测。</p><p>二、.phtml文件解释</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script language=<span class="string">&#x27;php&#x27;</span>&gt;@<span class="keyword">eval</span>(<span class="variable">$_POST</span>[shell]);&lt;/script&gt;</span><br><span class="line">&lt;script language=<span class="string">&#x27;php&#x27;</span>&gt;<span class="title function_ invoke__">system</span>(<span class="string">&#x27;cat /flag&#x27;</span>);&lt;/script&gt;</span><br></pre></td></tr></table></figure><p><strong><code>@eval($_POST[shell]);</code></strong><br>1.eval() 是 PHP 的危险函数，可以执行任意代码。<br>2.$_POST[shell] 表示攻击者可以通过 POST 请求传递 shell 参数并执行任意命令（如 shell=system(‘whoami’)）。<br>3.@ 用于抑制错误信息（避免被发现）。<br>4.<strong><code>system('cat /flag');</code></strong><br>system() 直接执行系统命令，这里尝试读取 /flag 文件（常见于 CTF 题目）。</p><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;%E5%89%8D%E8%A8%80&quot; tabindex=&quot;-1&quot;&gt;前言&lt;/h1&gt;
+&lt;p&gt;今天来讲一些关于web方面的题目，需要用到的工具有burpsuite,AntSword等，干货满满，如果有不懂的地方欢迎在评论区提问。&lt;/p&gt;
+&lt;h2 id=&quot;1.%5B%E</summary>
+      
+    
+    
+    
+    
+    <category term="AI" scheme="https://landon298.github.io/tags/AI/"/>
+    
+    <category term="CTF" scheme="https://landon298.github.io/tags/CTF/"/>
+    
+    <category term="区块链" scheme="https://landon298.github.io/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    <category term="密码学" scheme="https://landon298.github.io/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    <category term="网络安全" scheme="https://landon298.github.io/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>CTF-Buuctf每日打卡wp 2</title>
