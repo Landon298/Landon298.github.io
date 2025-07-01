@@ -61,7 +61,7 @@
   
     
       
-        <link rel="preload" as="style" onload="this.onload&#x3D;null;this.rel&#x3D;&#39;stylesheet&#39;" href="https://npm.webcache.cn/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6&#x2F;jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx&#x2F;&#x2F;Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+        <link rel="preload" as="style" onload="this.onload&#x3D;null;this.rel&#x3D;&#39;stylesheet&#39;" href="https://npm.webcache.cn/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l&#x2F;9On385z&#x2F;&#x2F;&#x2F;+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
       
     
   
@@ -73,10 +73,6 @@
 <link rel="stylesheet" href="https://npm.webcache.cn/@reimujs/aos@0.1.0/dist/aos.css" integrity="sha384-4NN3fZ5AokFyHuoihl7A9qWaCt+HsAtOaUsXwJGRb4&#x2F;SMBtFr2vcNSHR5E8dg0Wk" crossorigin="anonymous">
 
   
-  
-    
-<link rel="stylesheet" href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css" integrity="sha384-tLMkTWh2pfXNWGFlUS0w1TFtRG5xZ9lPWFOooj+vDDLIL+xBGQU&#x2F;voDBY5XE2lVh" crossorigin="anonymous">
-
   
   
 <meta name="generator" content="Hexo 7.3.0"></head>
@@ -297,7 +293,7 @@
     </div>
   
     <div class="icon-bilibili sidebar-social-icon">
-      <a href=https://space.bilibili.com/yourname itemprop="url" target="_blank" aria-label="bilibili" rel="noopener external nofollow noreferrer"></a>
+      <a href=https://space.bilibili.com/3546725696407684 itemprop="url" target="_blank" aria-label="bilibili" rel="noopener external nofollow noreferrer"></a>
     </div>
   
 </div>
@@ -626,7 +622,7 @@
     </div>
   
     <div class="icon-bilibili sidebar-social-icon">
-      <a href=https://space.bilibili.com/yourname itemprop="url" target="_blank" aria-label="bilibili" rel="noopener external nofollow noreferrer"></a>
+      <a href=https://space.bilibili.com/3546725696407684 itemprop="url" target="_blank" aria-label="bilibili" rel="noopener external nofollow noreferrer"></a>
     </div>
   
 </div>
@@ -667,8 +663,6 @@
 
     </div>
     
-    
-      <div id="aplayer" theme="var(--color-link)"></div>
     
     
     
@@ -893,7 +887,7 @@
   \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
                                                   
 `,'color: #ff5252;')
-    console.log('%c Theme.Reimu v' + '1.8.4' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+    console.log('%c Theme.Reimu v' + '1.8.5' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
   </script>
   
 
@@ -920,40 +914,6 @@
   
 
 
-
-  
-<script src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js" integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr+h5UfruuRL&#x2F;aORyw+5+HZoU6e" crossorigin="anonymous"></script>
-
-  
-    <script>
-      var isMobile = window.matchMedia('(max-width: 959px)').matches;
-      if (isMobile) {
-      const aplayer = _$('#aplayer');
-        if (aplayer) {
-          const aside = aplayer.parentNode;
-          if (aside?.tagName === 'ASIDE') {
-            aplayer.removeAttribute('data-aos');
-            aside.removeChild(aplayer);
-            document.body.appendChild(aplayer);
-          }
-        }
-      }
-      const ap = new APlayer({
-        theme: "var(--color-link)",
-        container: document.getElementById('aplayer'),
-        audio: [{"name":"哪里都是你","artist":"队长","url":"https://drive.google.com/file/d/19JSr5TDdZqIZkdeD_NEwiE8eBhGwWPPC/view?usp=sharing","cover":"https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250211152847849.jpg"}] || [],
-        fixed: isMobile ? true : (true || false),
-        autoplay: false || false,
-        loop: 'true' || 'all',
-        order: 'random' || 'list',
-        preload: 'auto' || 'auto',
-        volume: 0.5 || 0.7,
-        mutex: true || true,
-        listFolded: true || false,
-        lrcType: null || 0,
-      });
-    </script>
-  
 
 
 
