@@ -74,6 +74,10 @@
 
   
   
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css" integrity="sha384-tLMkTWh2pfXNWGFlUS0w1TFtRG5xZ9lPWFOooj+vDDLIL+xBGQU&#x2F;voDBY5XE2lVh" crossorigin="anonymous">
+
+  
   
 <meta name="generator" content="Hexo 7.3.0"></head>
 
@@ -262,6 +266,8 @@
         <div id="content" class="sidebar-left"  >
           <aside id="sidebar">
   
+  
+    <div id="aplayer" theme="var(--color-link)" data-aos="fade-up"></div>
   
   
   <div class="sidebar-wrapper ">
@@ -909,6 +915,40 @@
   
 
 
+
+  
+<script src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js" integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr+h5UfruuRL&#x2F;aORyw+5+HZoU6e" crossorigin="anonymous"></script>
+
+  
+    <script>
+      var isMobile = window.matchMedia('(max-width: 959px)').matches;
+      if (isMobile) {
+      const aplayer = _$('#aplayer');
+        if (aplayer) {
+          const aside = aplayer.parentNode;
+          if (aside?.tagName === 'ASIDE') {
+            aplayer.removeAttribute('data-aos');
+            aside.removeChild(aplayer);
+            document.body.appendChild(aplayer);
+          }
+        }
+      }
+      const ap = new APlayer({
+        theme: "var(--color-link)",
+        container: document.getElementById('aplayer'),
+        audio: [{"name":"哪里都是你","artist":"队长","url":"https://raw.githubusercontent.com/Landon298/music-assets/main/%E9%98%9F%E9%95%BF%20-%20%E5%93%AA%E9%87%8C%E9%83%BD%E6%98%AF%E4%BD%A0.mp3","cover":"https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250211152847849.jpg"},{"name":"Payphone","artist":"Maroon 5/Wiz khalifa","url":"https://raw.githubusercontent.com/Landon298/music-assets/main/payphone.mp3","cover":"https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250701153332320.jpg"},{"name":"Mine(IIIenium Remix)","artist":"ILLENIUM/phoebe Ryan","url":"https://raw.githubusercontent.com/Landon298/music-assets/main/Mine.mp3","cover":"https://raw.githubusercontent.com/Landon298/my-blog-pic-base/main/20250701153311706.jpg"},{"name":"Okay Alone","artist":"Sineself,Luma","url":"https://raw.githubusercontent.com/Landon298/music-assets/main/Okay%20Alone.mp3","cover":"http://p2.music.126.net/ML-9T01NmGbSPUS005d6iA==/109951166951513716.jpg?param=300x300"},{"name":"By Your Side","artist":"RAYE,Jonas Blue","url":"https://github.com/Landon298/music-assets/raw/refs/heads/main/by%20your%20side.mp3","cover":"http://p1.music.126.net/VxRDb7hpxtvbu72oX0x0Cw==/18201315486711101.jpg?param=300x300"},{"name":"Fool For You","artist":"KASTRA","url":"https://raw.githubusercontent.com/Landon298/music-assets/main/fool%20for%20you.mp3","cover":"http://p1.music.126.net/yJ_wry8wM2NaCOIxGjUKaA==/109951168980097868.jpg?param=300x300"},{"name":"Hate Me","artist":"苏小克","url":"https://raw.githubusercontent.com/Landon298/music-assets/main/hate%20me.mp3","cover":"http://p1.music.126.net/0d5aDRUR2CS3zoinWt9ewA==/109951168389353665.jpg?param=300x300"},{"name":"Stay","artist":"The Kid LAROI,Justin Bieber","url":"https://raw.githubusercontent.com/Landon298/music-assets/main/stay.mp3","cover":"http://p2.music.126.net/e5cvcdgeosDKTDrkTfZXnQ==/109951166155165682.jpg?param=300x300"}] || [],
+        fixed: isMobile ? true : (false || false),
+        autoplay: true || false,
+        loop: 'true' || 'all',
+        order: 'random' || 'list',
+        preload: 'auto' || 'auto',
+        volume: 0.5 || 0.7,
+        mutex: true || true,
+        listFolded: true || false,
+        lrcType: null || 0,
+      });
+    </script>
+  
 
 
 
